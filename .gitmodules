@@ -1,0 +1,3 @@
+[submodule ".emacs.d/lisp/rhtml"]
+	path = .emacs.d/lisp/rhtml
+	url = https://github.com/eschulte/rhtml.git
