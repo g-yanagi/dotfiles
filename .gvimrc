@@ -2,7 +2,7 @@ display settings for gvim
 " ----------------------
 " colorscheme railscasts
 set background=dark
-colorscheme solarized
+colorscheme desert
 set showtabline=2
 
 " window size
