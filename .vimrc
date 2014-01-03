@@ -1,36 +1,27 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" My Bundles here:
-Bundle 'railscasts'
-Bundle 'surround.vim'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ctrlp.vim'
-Bundle 'Haml'
 
-" ...
+" NeoBundle
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'altercation/vim-colors-solarized'
+
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-" "Bundle 'gmarik/vundle'
-
-
+filetype indent on
+syntax on
 
 " edit
 " ----------------------
@@ -78,7 +69,7 @@ set t_vb=
 
 " backup
 " --------------------
-set nobackup
+set backup
 set backupdir=~/.vim/vim_backup
 set swapfile
 set directory=~/.vim/vim_swap
@@ -103,6 +94,10 @@ augroup BufferAu
    autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 augroup END
 
+" 行番号
+" --------------------
+set number
+
 " Plugin setting
 " --------------------
 
@@ -111,15 +106,3 @@ let NERDShutUp = 1 "no alart undfined filetype
 
 " rails.vim
 let g:rails_level=3
-
-
-" foldling
-" --------------------
-" set foldmethod=indent
-" set foldlevel=2
-" set foldcolumn=3
-
-
-" 行番号
-" --------------------
-set number
