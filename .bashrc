@@ -24,6 +24,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
 PATH=$PATH:$HOME/.rvm/bin
 PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
 export PATH
 
 #######################################################################
