@@ -1,5 +1,7 @@
 #!/bin/bash
 
+os=$(uname)
+
 DOT_FILES=( .emacs.d .screenrc .vimrc .gvimrc .tmux.conf .bashrc )
 
 for file in ${DOT_FILES[@]}
@@ -19,10 +21,21 @@ then
   git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 fi
 
-# Ricty font の install
-brew tap sanemat/font
-brew install ricty
 
-cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
-echo $cmd
-eval $cmd
+if [ ${os} = "Darwin" ]
+then
+  # Ricty font の install
+  brew tap sanemat/font
+  brew install ricty
+
+  cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
+  eval $cmd
+
+  git clone https://github.com/Lokaltog/vim-powerline ~/.vim-powerline
+  fontforge -lang=py -script ~/.vim-powerline/fontpatcher/fontpatcher ~/Library/Fonts/Ricty-Regular.ttf
+
+  mv -f *.ttf ~/Library/Fonts/
+
+  # wait a minute
+  fc-cache -vf
+fi
