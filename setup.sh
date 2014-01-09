@@ -19,6 +19,12 @@ then
   mkdir -p ~/.vim/vim_swap
   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
   git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
+  if [ $os = "Linux" ]
+  then
+    cd ~/.vim/bundle/vimproc
+    make -f make_unix.mak
+    cd
+  fi
 fi
 
 
