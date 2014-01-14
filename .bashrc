@@ -59,14 +59,15 @@ if [ $os = "Darwin" ]; then
   alias stop_mongo="launchctl unload /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
   alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
   alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
+  alias seq="jot"
 fi
 
 #######################################################################
 # functions
 #######################################################################
 
-function uu () {
-  for i in `jot $1 1` ; do
+uu () {
+  for i in `seq 1 $1` ; do
     pwd
     cd ..
   done
