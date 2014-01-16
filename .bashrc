@@ -13,8 +13,12 @@ fi
 #######################################################################
 # environmental variables
 #######################################################################
-export EDITOR=vi
+if [ -e /usr/ant/bin/ant ]; then
+  export ANT_HOME=/usr/ant
+  export PATH=$PATH:/usr/ant/bin
+fi
 export ANT_OPTS=-Dfile.encoding=UTF8
+export EDITOR=vi
 export SVN_EDITOR="vim --noplugin"
 export HISTFILESIZE=100000
 export REMOTE_USER_NAME=g-yanagi
@@ -25,33 +29,42 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/
 PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
 if [ $os = "Darwin" ]; then
   PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
+  PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
+  PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
 fi
 PATH=$PATH:$NODE_PATH
 PATH=$PATH:/usr/local/mysql/bin
-PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
 PATH=$PATH:$HOME/.rvm/bin
 PATH=$PATH:/usr/local/share/npm/bin
-PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
 export PATH
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
 #######################################################################
 # aliases
 #######################################################################
+
+# 一文字シリーズ
+alias c="cd"
+alias g="git"
+alias h="ssh_wrapper"
+alias l="ls -l"
+alias m="man"
+alias s="sudo"
+alias v="vim"
+alias r="rsync"
+
+alias bashrc=". ~/.bashrc"
 alias ll="ls -l"
 alias hosts="cat /etc/hosts"
 alias vhosts="sudo vi /etc/hosts"
 alias cf='coffee'
 alias snv="svn"
-alias sst="svn status"
-alias sup="svn update"
-alias sdi="svn diff"
-alias sci="svn ci"
-alias slog="svn log"
-alias slogs="svn log --stop-on-copy"
+alias ci="svn ci"
+alias co="svn co"
+alias up="svn update"
 alias start_rvm='source ~/.rvm/scripts/rvm'
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias at="screen -r"
+alias portcheck="sudo netstat -anp"
 if [ $os = "Darwin" ]; then
   alias find="gfind"
   alias ls="gls --color=auto"
@@ -59,7 +72,8 @@ if [ $os = "Darwin" ]; then
   alias stop_mongo="launchctl unload /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
   alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
   alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
-  alias seq="jot"
+  #alias seq="jot"
+  alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 fi
 
 #######################################################################
@@ -85,7 +99,7 @@ function nkfu () {
   nkf --ic=CP932 --oc=UTF-8 $1
 }
 
-function s () {
+function ssh_wrapper () {
   ssh -A ${REMOTE_USER_NAME}@$1
 }
 
