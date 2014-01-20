@@ -10,6 +10,11 @@ else
   PS1="\[\033[1;34m\][\u@\h $WINDOW:\w]\n$\[\033[0m\] "
 fi
 
+# rvm 情報表示
+if [ -e ~/.rvm/bin/rvm-prompt ]; then
+  PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+fi
+
 #######################################################################
 # environmental variables
 #######################################################################
@@ -47,13 +52,15 @@ export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 alias c="cd"
 alias g="git"
 alias h="ssh_wrapper"
-alias l="ls -l"
+alias l="ls"
 alias m="man"
 alias s="sudo"
 alias v="vim"
 alias r="rsync"
 
 alias bashrc=". ~/.bashrc"
+alias vimrc=". ~/.vimrc"
+alias gvimrc=". ~/.gvimrc"
 alias ll="ls -l"
 alias hosts="cat /etc/hosts"
 alias vhosts="sudo vi /etc/hosts"
@@ -72,7 +79,6 @@ if [ $os = "Darwin" ]; then
   alias stop_mongo="launchctl unload /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
   alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
   alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
-  #alias seq="jot"
   alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 fi
 
@@ -96,7 +102,7 @@ function f () {
 }
 
 function nkfu () {
-  nkf --ic=CP932 --oc=UTF-8 $1
+   nkf -w -Lm -d $1
 }
 
 function ssh_wrapper () {
