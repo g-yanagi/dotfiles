@@ -129,6 +129,10 @@ function scc () {
     done
 }
 
+function init () {
+  sudo /etc/init.d/$1 $2
+}
+
 if [ $os = "Darwin" ]; then
   eval `dircolors ~/.dir_colors -b`
   unset DYLD_LIBRARY_PATH
