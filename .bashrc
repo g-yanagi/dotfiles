@@ -20,7 +20,6 @@ fi
 #######################################################################
 if [ -e /usr/ant/bin/ant ]; then
   export ANT_HOME=/usr/ant
-  export PATH=$PATH:/usr/ant/bin
 fi
 export ANT_OPTS=-Dfile.encoding=UTF8
 export EDITOR=vi
@@ -32,6 +31,7 @@ if [ $os = "Darwin" ]; then
 fi
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/
 PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
+PATH=$PATH:/usr/ant/bin
 if [ $os = "Darwin" ]; then
   PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
   PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
