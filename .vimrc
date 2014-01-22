@@ -102,6 +102,12 @@ augroup BufferAu
    autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 augroup END
 
+" vimdiff の配色を変更
+hi DiffAdd    ctermfg=black ctermbg=2  
+hi DiffChange ctermfg=black ctermbg=3  
+hi DiffDelete ctermfg=black ctermbg=6  
+hi DiffText   ctermfg=black ctermbg=7  
+
 " Plugin setting
 " --------------------
 
