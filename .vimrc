@@ -20,6 +20,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'jpo/vim-railscasts-theme'
 
 filetype plugin indent on     " required!
 filetype indent on
