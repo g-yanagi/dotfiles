@@ -58,11 +58,11 @@ set ignorecase
 " 大文字入力時大文字小文字を無視
 set smartcase
 " バックアップファイルを有効
-" set backup
+set nobackup
 " バックアップファイルの場所
 " set backupdir=~/.vim/vim_backup
 " スワップファイルを有効
-" set swapfile
+set noswapfile
 " スワップファイルの場所
 " set directory=~/.vim/vim_swap
 " ベルを無効化
