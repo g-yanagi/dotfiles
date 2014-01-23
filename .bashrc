@@ -69,6 +69,7 @@ alias snv="svn"
 alias ci="svn ci"
 alias co="svn co"
 alias up="svn update"
+alias log="svn log"
 alias start_rvm='source ~/.rvm/scripts/rvm'
 alias at="screen -r"
 alias portcheck="sudo netstat -anp"
