@@ -12,7 +12,7 @@ fi
 
 # rvm 情報表示
 if [ -e ~/.rvm/bin/rvm-prompt ]; then
-  PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+  PS1="\$(~/.rvm/bin/rvm-prompt)$PS1"
 fi
 
 #######################################################################
@@ -57,6 +57,7 @@ alias m="man"
 alias s="sudo"
 alias v="vim"
 alias r="rsync"
+alias p="ps aux | grep"
 
 alias bashrc=". ~/.bashrc"
 alias vimrc=". ~/.vimrc"
@@ -69,6 +70,7 @@ alias snv="svn"
 alias ci="svn ci"
 alias co="svn co"
 alias up="svn update"
+alias st="svn status"
 alias log="svn log"
 alias sdiff="svn diff | vim -R -"
 alias start_rvm='source ~/.rvm/scripts/rvm'
@@ -133,6 +135,12 @@ function scc () {
 
 function init () {
   sudo /etc/init.d/$1 $2
+}
+
+function renv () {
+  start_rvm
+  rvm use $1
+  rvm gemset use $2
 }
 
 if [ $os = "Darwin" ]; then
