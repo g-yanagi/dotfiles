@@ -143,6 +143,19 @@ function renv () {
   rvm gemset use $2
 }
 
+function msd () {
+  mysql -uroot -e "show databases"
+}
+
+function mst () {
+  mysql $1 -uroot -e "show tables"
+}
+
+function mss () {
+  mysql $1 -uroot -e "select * from $2"
+}
+
+
 if [ $os = "Darwin" ]; then
   eval `dircolors ~/.dir_colors -b`
   unset DYLD_LIBRARY_PATH

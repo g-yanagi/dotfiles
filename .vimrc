@@ -22,6 +22,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundle 'Align'
 
 filetype plugin indent on     " required!
 filetype indent on
