@@ -21,6 +21,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'jiangmiao/simple-javascript-indenter'
 
 filetype plugin indent on     " required!
 filetype indent on
@@ -49,7 +50,7 @@ set expandtab
 " 自動的に改行しないようにする
 set textwidth=0
 " 行番号
-set number                                
+" set number                                
 " 入力中から詮索できるようにする
 set incsearch
 " 検索にマッチした語をハイライト
@@ -117,3 +118,7 @@ let NERDShutUp = 1 "no alart undfined filetype
 
 " rails.vim
 let g:rails_level=3
+
+" simple-javascript-indeter
+let g:SimpleJsIndenter_BriefMode = 1
+let g:SimpleJsIndenter_CaseIndentLevel = -1
