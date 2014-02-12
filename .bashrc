@@ -155,6 +155,13 @@ function mss () {
   mysql $1 -uroot -e "select * from $2"
 }
 
+function loop () {
+  while [ true ]; do 
+    $1
+    sleep $2
+  done
+}
+
 
 if [ $os = "Darwin" ]; then
   eval `dircolors ~/.dir_colors -b`
