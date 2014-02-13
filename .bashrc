@@ -157,7 +157,7 @@ function mss () {
 
 function loop () {
   while [ true ]; do 
-    eval $1
+    eval "$1"
     sleep $2
   done
 }
