@@ -49,7 +49,9 @@ export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 #######################################################################
 
 # 一文字シリーズ
+alias b="popd"
 alias c="cd"
+alias f="pushd"
 alias g="git"
 alias h="ssh_wrapper"
 alias l="ls"
