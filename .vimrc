@@ -23,6 +23,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'Align'
+NeoBundle 'Yggdroot/indentLine'
 
 filetype plugin indent on     " required!
 filetype indent on
@@ -109,7 +110,11 @@ augroup END
 hi DiffAdd    ctermfg=black ctermbg=2  
 hi DiffChange ctermfg=black ctermbg=3  
 hi DiffDelete ctermfg=black ctermbg=6  
-hi DiffText   ctermfg=black ctermbg=7  
+hi DiffText   ctermfg=black ctermbg=7
+
+" 非表示文字を表示させる
+set list
+set listchars=tab:..,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " Plugin setting
 " --------------------
