@@ -15,6 +15,7 @@ if [ -e ~/.rvm/bin/rvm-prompt ]; then
   PS1="\$(~/.rvm/bin/rvm-prompt)$PS1"
 fi
 
+
 #######################################################################
 # environmental variables
 #######################################################################
@@ -99,15 +100,15 @@ uu () {
   done
 }
 
-function fd () {
+fd () {
   find . -type d -name .svn -prune -o -not -name "*~" -exec grep -H $1 {} \;
 }
 
-function f () {
+f () {
   find . -type d -name .svn -prune -o -name "$1" -print
 }
 
-function nkfu () {
+nkfu () {
    nkf -w -Lm -d $1
 }
 
@@ -115,7 +116,7 @@ function ssh_wrapper () {
   ssh -A ${REMOTE_USER_NAME}@$1
 }
 
-function sc () {
+sc () {
     argv=("$@")
     c=`expr $# - 1`
     for i in `seq 1 $c`
@@ -125,7 +126,7 @@ function sc () {
     done
 }
 
-function scc () {
+scc () {
     argv=("$@")
     c=`expr $# - 1`
     for i in `seq 1 $c`
@@ -135,29 +136,29 @@ function scc () {
     done
 }
 
-function init () {
+init () {
   sudo /etc/init.d/$1 $2
 }
 
-function renv () {
+renv () {
   start_rvm
   rvm use $1
   rvm gemset use $2
 }
 
-function msd () {
+msd () {
   mysql -uroot -e "show databases"
 }
 
-function mst () {
+mst () {
   mysql $1 -uroot -e "show tables"
 }
 
-function mss () {
+mss () {
   mysql $1 -uroot -e "select * from $2"
 }
 
-function loop () {
+loop () {
   while [ true ]; do 
     eval "$1"
     sleep $2
