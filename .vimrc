@@ -113,8 +113,8 @@ hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
 
 " 非表示文字を表示させる
-set list
-set listchars=tab:..,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" set list
+" set listchars=tab:..,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " Plugin setting
 " --------------------

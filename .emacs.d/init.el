@@ -42,7 +42,7 @@
 (set-background-color "black")
 (set-foreground-color "white")
 (set-cursor-color "yellow")
-(add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
+;;(add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
 (setq-default line-spacing 0)
 
 ;; ビープ音を抑制
@@ -65,7 +65,7 @@
   (cond ((eq ws 'ns)
          (set-face-attribute 'default nil
                              :family "Ricty"
-                             :height 140)
+                             :height 180)
          (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
 
 ;; 行番号
