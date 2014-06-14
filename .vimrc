@@ -99,12 +99,12 @@ imap <c-h> <LEFT>
 imap <c-j> <DOWN>
 imap <c-k> <UP>
 
-" カレントディレクトリを自動的に移動
-augroup BufferAu
-   autocmd!
+" カレントディレクトリを自動的に移動 (ctrlp と相性が悪いのでコメントアウト)
+" augroup BufferAu
+"   autocmd!
    " change current directory
-   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
-augroup END
+"   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+" augroup END
 
 " vimdiff の配色を変更
 hi DiffAdd    ctermfg=black ctermbg=2  
@@ -113,8 +113,9 @@ hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
 
 " 非表示文字を表示させる
-" set list
+set list
 " set listchars=tab:..,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=tab:..,trail:-,extends:»,precedes:«,nbsp:%
 
 " Plugin setting
 " --------------------
