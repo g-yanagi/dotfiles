@@ -24,6 +24,9 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'Align'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'vim-scripts/gtags.vim'
 
 filetype plugin indent on     " required!
 filetype indent on
@@ -77,7 +80,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 " バックスペースでなんでも消せるように
 set backspace=indent,eol,start
 " タブの幅とか
-set tabstop=2 shiftwidth=2 softtabstop=0
+set tabstop=4 shiftwidth=4 softtabstop=0
 " ステータスバー
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w
@@ -93,11 +96,11 @@ nnoremap j gj
 nnoremap k gk
 
 " インサートモードでも移動できるようにする
-imap <c-o> <END>
-imap <c-a> <HOME>
-imap <c-h> <LEFT>
-imap <c-j> <DOWN>
-imap <c-k> <UP>
+" imap <c-o> <END>
+" imap <c-a> <HOME>
+" imap <c-h> <LEFT>
+" imap <c-j> <DOWN>
+" imap <c-k> <UP>
 
 " カレントディレクトリを自動的に移動 (ctrlp と相性が悪いのでコメントアウト)
 " augroup BufferAu
@@ -129,3 +132,15 @@ let g:rails_level=3
 " simple-javascript-indeter
 let g:SimpleJsIndenter_BriefMode = 1
 let g:SimpleJsIndenter_CaseIndentLevel = -1
+
+" ruby モードのインデントを変更
+au FileType ruby setl sw=2 sts=2 et
+" eruby モードのインデントを変更
+au FileType eruby setl sw=2 sts=2 et
+
+" gtags
+" map <C-g> :Gtags
+" map <C-h> :Gtags -f %<CR>
+" map <C-j> :GtagsCursor<CR>
+" map <C-n> :cn<CR>
+" map <C-p> :cp<CR>

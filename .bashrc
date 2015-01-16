@@ -37,6 +37,7 @@ if [ $os = "Darwin" ]; then
   PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
   PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
   PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
+  PATH=$PATH:/sbin/
 fi
 PATH=$PATH:$NODE_PATH
 PATH=$PATH:/usr/local/mysql/bin
