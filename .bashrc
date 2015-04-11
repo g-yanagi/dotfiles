@@ -19,6 +19,7 @@ fi
 #######################################################################
 # environmental variables
 #######################################################################
+
 if [ -e /usr/ant/bin/ant ]; then
   export ANT_HOME=/usr/ant
 fi
@@ -45,6 +46,10 @@ PATH=$PATH:$HOME/.rvm/bin
 PATH=$PATH:/usr/local/share/npm/bin
 export PATH
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
+
+export GOPATH=$HOME/go
+export GOROOT=$( go env GOROOT )
+export PATH=$GOPATH/bin:$PATH
 
 #######################################################################
 # aliases
@@ -88,6 +93,8 @@ if [ $os = "Darwin" ]; then
   alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
   alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
   alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+  alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
+  alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 fi
 
 #######################################################################

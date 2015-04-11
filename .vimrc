@@ -27,6 +27,8 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/gtags.vim'
+NeoBundle "tyru/caw.vim.git"
+NeoBundle 'fatih/vim-go'
 
 filetype plugin indent on     " required!
 filetype indent on
@@ -35,7 +37,7 @@ syntax on
 " 改行時に自動にインデントする
 set autoindent
 " 構文を解釈してインデントする
-set smartindent                           
+set smartindent
 " ファイル内の <Tab> が対応する空白の数
 set smarttab
 " 対応する括弧をハイライト
@@ -55,7 +57,7 @@ set expandtab
 " 自動的に改行しないようにする
 set textwidth=0
 " 行番号
-set number                                
+set number
 " 入力中から詮索できるようにする
 set incsearch
 " 検索にマッチした語をハイライト
@@ -137,6 +139,8 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 au FileType ruby setl sw=2 sts=2 et
 " eruby モードのインデントを変更
 au FileType eruby setl sw=2 sts=2 et
+" coffee モードのインデントを変更
+au FileType coffee setl sw=2 sts=2 et
 
 " gtags
 " map <C-g> :Gtags
@@ -144,3 +148,20 @@ au FileType eruby setl sw=2 sts=2 et
 " map <C-j> :GtagsCursor<CR>
 " map <C-n> :cn<CR>
 " map <C-p> :cp<CR>
+
+" caw
+nmap <C-K> <Plug>(caw:i:toggle)
+vmap <C-K> <Plug>(caw:i:toggle)
+
+" ctrlp
+let g:ctrlp_working_path_mode = 0
+
+" for golang
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
