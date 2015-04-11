@@ -28,18 +28,9 @@ export EDITOR=vi
 export SVN_EDITOR="vim --noplugin"
 export HISTFILESIZE=100000
 export REMOTE_USER_NAME=g-yanagi
-if [ $os = "Darwin" ]; then
-  export JAVA_HOME=`/usr/libexec/java_home`
-fi
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/
 PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
 PATH=$PATH:/usr/ant/bin
-if [ $os = "Darwin" ]; then
-  PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
-  PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
-  PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
-  PATH=$PATH:/sbin/
-fi
 PATH=$PATH:$NODE_PATH
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:$HOME/.rvm/bin
@@ -85,17 +76,6 @@ alias sdiff="svn diff | vim -R -"
 alias start_rvm='source ~/.rvm/scripts/rvm'
 alias at="screen -r"
 alias portcheck="sudo netstat -anp"
-if [ $os = "Darwin" ]; then
-  alias find="gfind"
-  alias ls="gls --color=auto"
-  alias start_mongo="launchctl load /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
-  alias stop_mongo="launchctl unload /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
-  alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
-  alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
-  alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-  alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
-  alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
-fi
 
 #######################################################################
 # functions
@@ -174,17 +154,16 @@ loop () {
 }
 
 
-if [ $os = "Darwin" ]; then
-  eval `dircolors ~/.dir_colors -b`
-  unset DYLD_LIBRARY_PATH
-fi
-
 SOCK="/tmp/ssh-agent-$USER"
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
 then
   rm -f $SOCK
   ln -sf $SSH_AUTH_SOCK $SOCK
   export SSH_AUTH_SOCK=$SOCK
+fi
+
+if [ $os = "Darwin" ]; then
+  . ~/.bashrc.mac
 fi
 
 if [ -f ~/.bashrc.local ]; then

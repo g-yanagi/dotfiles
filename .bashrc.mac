@@ -1,0 +1,26 @@
+
+#######################################################################
+# environmental variables
+#######################################################################
+export JAVA_HOME=`/usr/libexec/java_home`
+
+PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
+PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
+PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
+PATH=$PATH:/sbin/
+
+#######################################################################
+# aliases
+#######################################################################
+alias find="gfind"
+alias ls="gls --color=auto"
+alias start_mongo="launchctl load /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
+alias stop_mongo="launchctl unload /usr/local/Cellar/mongodb/2.4.4-x86_64/homebrew.mxcl.mongodb.plist"
+alias start_mysql="launchctl load /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
+alias stop_mysql="launchctl unload /usr/local/opt/mysql/homebrew.mxcl.mysql.plist"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
+alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
+
+eval `dircolors ~/.dir_colors -b`
+unset DYLD_LIBRARY_PATH

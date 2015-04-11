@@ -2,7 +2,7 @@
 
 os=$(uname)
 
-DOT_FILES=( .emacs.d .screenrc .vimrc .gvimrc .tmux.conf .bashrc )
+DOT_FILES=( .emacs.d .screenrc .vimrc .gvimrc .tmux.conf .bashrc .bashrc.mac)
 
 for file in ${DOT_FILES[@]}
 do
