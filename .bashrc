@@ -38,9 +38,6 @@ PATH=$PATH:/usr/local/share/npm/bin
 export PATH
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
-export GOPATH=$HOME/go
-export GOROOT=$( go env GOROOT )
-export PATH=$GOPATH/bin:$PATH
 
 #######################################################################
 # aliases
