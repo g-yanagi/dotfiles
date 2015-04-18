@@ -111,6 +111,8 @@ nnoremap k gk
 "   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 " augroup END
 
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 " vimdiff の配色を変更
 hi DiffAdd    ctermfg=black ctermbg=2  
 hi DiffChange ctermfg=black ctermbg=3  
