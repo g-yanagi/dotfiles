@@ -9,7 +9,7 @@ set showtabline=2
 if has("win32")
     au GUIEnter * simalt ~x
 else
-    set transparency=8
+"    set transparency=8
     au GUIEnter * set lines=60
     au GUIEnter * set columns=190
 endif
