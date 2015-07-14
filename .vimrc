@@ -144,7 +144,7 @@ au FileType eruby setl sw=2 sts=2 et
 " coffee モードのインデントを変更
 au FileType coffee setl sw=2 sts=2 et
 " js モードのインデントを変更
-au FileType coffee setl sw=4 sts=4 et
+au FileType js setl sw=4 sts=4 et
 
 " gtags
 " map <C-g> :Gtags
