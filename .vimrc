@@ -12,7 +12,6 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
@@ -28,7 +27,8 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle "tyru/caw.vim.git"
-NeoBundle 'fatih/vim-go'
+NeoBundle "google/vim-ft-go"
+NeoBundle 'vim-jp/vim-go-extra'
 
 filetype plugin indent on     " required!
 filetype indent on
@@ -89,6 +89,9 @@ set statusline=%<%f\ %m%r%h%w
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
 set statusline+=%=%l/%L,%c%V%8P
 
+autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 " 全角スペースを目立たせる
 highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
@@ -97,13 +100,6 @@ match ZenkakuSpace /　/
 nnoremap j gj
 nnoremap k gk
 
-" インサートモードでも移動できるようにする
-" imap <c-o> <END>
-" imap <c-a> <HOME>
-" imap <c-h> <LEFT>
-" imap <c-j> <DOWN>
-" imap <c-k> <UP>
-
 " カレントディレクトリを自動的に移動 (ctrlp と相性が悪いのでコメントアウト)
 " augroup BufferAu
 "   autocmd!
@@ -111,12 +107,10 @@ nnoremap k gk
 "   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 " augroup END
 
-autocmd BufNewFile,BufRead *.json set ft=javascript
-
 " vimdiff の配色を変更
-hi DiffAdd    ctermfg=black ctermbg=2  
-hi DiffChange ctermfg=black ctermbg=3  
-hi DiffDelete ctermfg=black ctermbg=6  
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
 
 " 非表示文字を表示させる
@@ -146,26 +140,9 @@ au FileType coffee setl sw=2 sts=2 et
 " js モードのインデントを変更
 au FileType js setl sw=4 sts=4 et
 
-" gtags
-" map <C-g> :Gtags
-" map <C-h> :Gtags -f %<CR>
-" map <C-j> :GtagsCursor<CR>
-" map <C-n> :cn<CR>
-" map <C-p> :cp<CR>
-
 " caw
 nmap <C-K> <Plug>(caw:i:toggle)
 vmap <C-K> <Plug>(caw:i:toggle)
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0
-
-" for golang
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
