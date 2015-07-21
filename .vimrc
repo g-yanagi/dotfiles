@@ -29,6 +29,7 @@ NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle "tyru/caw.vim.git"
 NeoBundle "google/vim-ft-go"
 NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle "ctrlpvim/ctrlp.vim"
 
 filetype plugin indent on     " required!
 filetype indent on
