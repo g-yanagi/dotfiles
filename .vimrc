@@ -54,7 +54,7 @@ set hidden
 " 入力中のコマンドを表示する
 set showcmd
 " タブを半角スペースに変更
-set expandtab
+" set expandtab
 " 自動的に改行しないようにする
 set textwidth=0
 " 行番号
@@ -89,8 +89,11 @@ set laststatus=2
 set statusline=%<%f\ %m%r%h%w
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
 set statusline+=%=%l/%L,%c%V%8P
+" fold
+set foldmethod=marker
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.jsm set ft=jsm
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " 全角スペースを目立たせる
@@ -100,13 +103,6 @@ match ZenkakuSpace /　/
 " スクロールは１行づつ行うようにする
 nnoremap j gj
 nnoremap k gk
-
-" カレントディレクトリを自動的に移動 (ctrlp と相性が悪いのでコメントアウト)
-" augroup BufferAu
-"   autocmd!
-   " change current directory
-"   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
-" augroup END
 
 " vimdiff の配色を変更
 hi DiffAdd    ctermfg=black ctermbg=2

@@ -39,7 +39,7 @@ export PATH
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
 #######################################################################
 # aliases
