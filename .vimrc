@@ -5,8 +5,15 @@ filetype off                   " required!
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+
+if 730 < version
+    call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
+else
+    call neobundle#rc(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+endif
 
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
@@ -54,7 +61,7 @@ set hidden
 " 入力中のコマンドを表示する
 set showcmd
 " タブを半角スペースに変更
-" set expandtab
+set expandtab
 " 自動的に改行しないようにする
 set textwidth=0
 " 行番号
