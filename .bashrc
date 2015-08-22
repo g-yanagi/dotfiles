@@ -152,6 +152,10 @@ loop () {
   done
 }
 
+line () {
+  cat $1 | head -n $2 | tail -n 1
+}
+
 
 SOCK="/tmp/ssh-agent-$USER"
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
