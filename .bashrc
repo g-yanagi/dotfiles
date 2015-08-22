@@ -153,7 +153,12 @@ loop () {
 }
 
 line () {
-  cat $1 | head -n $2 | tail -n 1
+    if (( $# == 2 ))
+    then
+        cat $1 | head -n $2 | tail -n 1
+    else
+        cat $1 | tail -n 1
+    fi
 }
 
 
