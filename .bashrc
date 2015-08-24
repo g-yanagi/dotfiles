@@ -41,6 +41,17 @@ export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
+if [[ -e /vagrant_data/bin ]]
+then
+    export PATH=$PATH:/vagrant_data/bin/
+fi
+
+if [[ -e /vagrant_data/lib ]]
+then
+    export CLASS_PATH=$CLASS_PATH:/vagrant_data/lib/
+fi
+
+
 #######################################################################
 # aliases
 #######################################################################
