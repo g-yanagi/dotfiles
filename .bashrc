@@ -7,7 +7,7 @@ os=$(uname)
 if [ "$TERM" = "dumb" ] ; then
   PS1="[\u@\h $WINDOW:\w]\n$ "
 else
-  PS1="\[\033[1;34m\][\u@\h $WINDOW:\w]\n$\[\033[0m\] "
+  PS1='[\t \[\e[1;33m\]\[\e[1;31m\]\u\[\e[1;33m\]@\[\e[1;35m\]\h:\w\[\e[00m\]]\n$\[\e[00m\] '
 fi
 
 # rvm 情報表示
