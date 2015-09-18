@@ -34,6 +34,7 @@ if 730 < version
     NeoBundle 'plasticboy/vim-markdown'
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
+    NeoBundle 'Lokaltog/vim-powerline'
     call neobundle#end()
 else
     call neobundle#rc(expand('~/.vim/bundle/'))
@@ -63,6 +64,7 @@ else
     NeoBundle 'plasticboy/vim-markdown'
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
+    NeoBundle 'Lokaltog/vim-powerline'
 endif
 
 filetype plugin indent on     " required!
