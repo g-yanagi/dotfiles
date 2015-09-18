@@ -128,6 +128,10 @@ set statusline+=%=%l/%L,%c%V%8P
 " fold
 set foldmethod=marker
 
+" 色
+set background=dark
+colorscheme solarized
+
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.jsm set ft=jsm
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
