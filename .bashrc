@@ -86,6 +86,7 @@ alias sdiff="svn diff | vim -R -"
 alias start_rvm='source ~/.rvm/scripts/rvm'
 alias at="screen -r"
 alias portcheck="sudo netstat -anp"
+alias vi="vim -u NONE --noplugin"
 
 #######################################################################
 # functions
