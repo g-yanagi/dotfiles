@@ -130,7 +130,7 @@ set foldmethod=marker
 
 " 色
 set background=dark
-colorscheme solarized
+colorscheme elflord
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.jsm set ft=jsm
