@@ -6,7 +6,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-if 730 < version
+if 703 < version
     call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
     NeoBundle 'Shougo/vimproc'

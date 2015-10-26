@@ -22,5 +22,5 @@ alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 
-eval `dircolors ~/.dir_colors -b`
+#eval `dircolors ~/.dir_colors -b`
 unset DYLD_LIBRARY_PATH
