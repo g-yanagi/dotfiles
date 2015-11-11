@@ -6,68 +6,36 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-if 702 < v:version
-    call neobundle#begin(expand('~/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-    NeoBundle 'Shougo/vimproc'
-    NeoBundle 'Shougo/neocomplcache'
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'kchmck/vim-coffee-script'
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'tpope/vim-rails'
-    NeoBundle 'tpope/vim-surround'
-    NeoBundle 'vim-ruby/vim-ruby'
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'itchyny/lightline.vim'
-    NeoBundle 'terryma/vim-multiple-cursors'
-    NeoBundle 'jpo/vim-railscasts-theme'
-    NeoBundle 'jiangmiao/simple-javascript-indenter'
-    NeoBundle 'Align'
-    NeoBundle 'Yggdroot/indentLine'
-    NeoBundle 'othree/html5.vim'
-    NeoBundle 'rking/ag.vim'
-    NeoBundle 'vim-scripts/gtags.vim'
-    NeoBundle "tyru/caw.vim.git"
-    NeoBundle "google/vim-ft-go"
-    NeoBundle 'vim-jp/vim-go-extra'
-    NeoBundle "ctrlpvim/ctrlp.vim"
-    NeoBundle 'plasticboy/vim-markdown'
-    NeoBundle 'kannokanno/previm'
-    NeoBundle 'tyru/open-browser.vim'
-    NeoBundle 'Lokaltog/vim-powerline'
-    NeoBundle 'tpope/vim-fireplace'
-    call neobundle#end()
-else
-    call neobundle#rc(expand('~/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-    NeoBundle 'Shougo/vimproc'
-    NeoBundle 'Shougo/neocomplcache'
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'kchmck/vim-coffee-script'
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'tpope/vim-rails'
-    NeoBundle 'tpope/vim-surround'
-    NeoBundle 'vim-ruby/vim-ruby'
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'itchyny/lightline.vim'
-    NeoBundle 'terryma/vim-multiple-cursors'
-    NeoBundle 'jpo/vim-railscasts-theme'
-    NeoBundle 'jiangmiao/simple-javascript-indenter'
-    NeoBundle 'Align'
-    NeoBundle 'Yggdroot/indentLine'
-    NeoBundle 'othree/html5.vim'
-    NeoBundle 'rking/ag.vim'
-    NeoBundle 'vim-scripts/gtags.vim'
-    NeoBundle "tyru/caw.vim.git"
-    NeoBundle "google/vim-ft-go"
-    NeoBundle 'vim-jp/vim-go-extra'
-    NeoBundle "ctrlpvim/ctrlp.vim"
-    NeoBundle 'plasticboy/vim-markdown'
-    NeoBundle 'kannokanno/previm'
-    NeoBundle 'tyru/open-browser.vim'
-    NeoBundle 'Lokaltog/vim-powerline'
-    NeoBundle 'tpope/vim-fireplace'
-endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundle 'Align'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'vim-scripts/gtags.vim'
+NeoBundle "tyru/caw.vim.git"
+NeoBundle "google/vim-ft-go"
+NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle "ctrlpvim/ctrlp.vim"
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'tpope/vim-fireplace'
+call neobundle#end()
 
 filetype plugin indent on     " required!
 filetype indent on
