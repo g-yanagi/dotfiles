@@ -35,6 +35,7 @@ if 702 < v:version
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
     NeoBundle 'Lokaltog/vim-powerline'
+    NeoBundle 'tpope/vim-fireplace'
     call neobundle#end()
 else
     call neobundle#rc(expand('~/.vim/bundle/'))
@@ -65,6 +66,7 @@ else
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
     NeoBundle 'Lokaltog/vim-powerline'
+    NeoBundle 'tpope/vim-fireplace'
 endif
 
 filetype plugin indent on     " required!
