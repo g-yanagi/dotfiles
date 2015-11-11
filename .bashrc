@@ -76,6 +76,7 @@ alias start_rvm='source ~/.rvm/scripts/rvm'
 alias at="screen -r"
 alias portcheck="sudo netstat -anp"
 alias vi="vim -u NONE --noplugin"
+alias neobundleupdate="~/.vim/bundle/neobundle.vim/bin/neoinstall"
 
 #######################################################################
 # functions
