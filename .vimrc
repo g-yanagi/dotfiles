@@ -8,7 +8,12 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc',{
+            \ 'build' : {
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -35,6 +40,7 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'hitode7456/vim-jsm'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -98,13 +104,22 @@ set statusline+=%=%l/%L,%c%V%8P
 " fold
 set foldmethod=marker
 
+" □とか○の文字があってもカーソル位置がずれないようにする
+set ambiwidth=double
+
 " 色
 set background=dark
 colorscheme elflord
 
-autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd BufNewFile,BufRead *.jsm set ft=jsm
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd BufNewFile,BufRead *.json   set ft=json
+autocmd BufNewFile,BufRead *.mfj    set ft=json
+autocmd BufNewFile,BufRead *.jsm    set ft=jsm
+
+autocmd FileType go     autocmd BufWritePre <buffer> Fmt
+autocmd FileType ruby   setl sw=2 sts=2 et
+autocmd FileType eruby  setl sw=2 sts=2 et
+autocmd FileType coffee setl sw=2 sts=2 et
+autocmd FileType js     setl sw=4 sts=4 et
 
 " 全角スペースを目立たせる
 highlight link ZenkakuSpace Error
@@ -122,7 +137,6 @@ hi DiffText   ctermfg=black ctermbg=7
 
 " 非表示文字を表示させる
 set list
-" set listchars=tab:..,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set listchars=tab:..,trail:-,extends:»,precedes:«,nbsp:%
 
 " Plugin setting
@@ -137,15 +151,6 @@ let g:rails_level=3
 " simple-javascript-indeter
 let g:SimpleJsIndenter_BriefMode = 1
 let g:SimpleJsIndenter_CaseIndentLevel = -1
-
-" ruby モードのインデントを変更
-au FileType ruby setl sw=2 sts=2 et
-" eruby モードのインデントを変更
-au FileType eruby setl sw=2 sts=2 et
-" coffee モードのインデントを変更
-au FileType coffee setl sw=2 sts=2 et
-" js モードのインデントを変更
-au FileType js setl sw=4 sts=4 et
 
 " caw
 nmap <C-K> <Plug>(caw:i:toggle)
