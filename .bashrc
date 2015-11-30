@@ -163,6 +163,10 @@ line () {
     fi
 }
 
+sclcmd () {
+    scl enable devtoolset-2 "$1"
+}
+
 
 SOCK="/tmp/ssh-agent-$USER"
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
