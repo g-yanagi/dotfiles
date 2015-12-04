@@ -4,17 +4,26 @@ os=$(uname)
 #######################################################################
 # prompt
 #######################################################################
+prompt="\e[04m[\u @ \h : \w ]\e[00m"
+if [ -e ~/.production_env ]
+then
+    prompt="\e[1;31m\]${prompt}"
+elif [ -e ~/.demo_env ] || [ -e ~/.staging_env ]
+then
+    prompt="\e[1;33m\]${prompt}"
+elif [ -e ~/.test_env ]
+then
+    prompt="\e[1;35m\]${prompt}"
+elif [ -e ~/.development_env ]
+then
+    prompt="\e[1;32m\]${prompt}"
+fi
+
+PS1="${prompt}\n$ "
+
 if [ "$TERM" = "dumb" ] ; then
-  PS1="[\u@\h $WINDOW:\w]\n$ "
-else
-  PS1='[\t \[\e[1;33m\]\[\e[1;31m\]\u\[\e[1;33m\]@\[\e[1;35m\]\h:\w\[\e[00m\]]\n$\[\e[00m\] '
+    PS1="[\u@\h $WINDOW:\w]\n$ "
 fi
-
-# rvm 情報表示
-if [ -e ~/.rvm/bin/rvm-prompt ]; then
-  PS1="\$(~/.rvm/bin/rvm-prompt)$PS1"
-fi
-
 
 #######################################################################
 # environmental variables
