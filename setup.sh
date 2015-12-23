@@ -2,7 +2,7 @@
 
 os=$(uname)
 
-DOT_FILES=( .emacs.d .screenrc .vimrc .gvimrc .tmux.conf .bashrc .bashrc.mac)
+DOT_FILES=(.screenrc .vimrc .gvimrc .tmux.conf .bashrc .bashrc.mac)
 
 for file in ${DOT_FILES[@]}
 do
@@ -11,6 +11,12 @@ do
       ln -s $HOME/dotfiles/$file $HOME/$file
     fi
 done
+
+if [ ! -e $HOME/.emacs.d ]
+then
+    mkdir $HOME/.emacs.d
+    ln -s $HOME/dotfiles/.emacs.d/init.el  $$HOME/.emacs.d/init.el
+fi
 
 if [ ! -e ~/.vim/bundle ]
 then
@@ -26,7 +32,6 @@ then
     cd
   fi
 fi
-
 
 if [ ${os} = "Darwin" ]
 then

@@ -35,9 +35,12 @@ fi
 export ANT_OPTS=-Dfile.encoding=UTF8
 export EDITOR=vi
 export SVN_EDITOR="vim --noplugin"
-export HISTFILESIZE=100000
 export REMOTE_USER_NAME=g-yanagi
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=1000000
+
+
 PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
 PATH=$PATH:/usr/ant/bin
 PATH=$PATH:$NODE_PATH
@@ -57,6 +60,7 @@ export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 # 一文字シリーズ
 alias b="popd"
 alias c="cd"
+alias d="dirs"
 alias f="pushd"
 alias g="git"
 alias h="ssh_wrapper"
