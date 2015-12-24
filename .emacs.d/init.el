@@ -17,9 +17,6 @@
 
 (set-keyboard-coding-system 'utf-8)
 
-;; カラーテーマ
-(load-theme 'solarized-dark t)
-
 ;; keymap
 (global-set-key "\C-h" 'delete-backward-char)
 
@@ -69,9 +66,7 @@
     popup
     smartrep
     web-mode
-    org-mode
     color-theme-solarized
-    colro-theme
     htmlize
     )
   "A list of packages to install from MELPA at launch.")
@@ -86,6 +81,9 @@
 (ido-mode t)
 
 ;; memo-pop
+;; カラーテーマ
+(load-theme 'solarized-dark t)
+
 (require 'cl)
 (require 'memo-pop)
 (memo-pop-set-window-height 60)
