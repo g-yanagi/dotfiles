@@ -48,7 +48,6 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:$HOME/.rvm/bin
 PATH=$PATH:/usr/local/share/npm/bin
 export PATH
-export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
@@ -114,7 +113,7 @@ nkfu () {
    nkf -w -Lm -d $1
 }
 
-function ssh_wrapper () {
+ssh_wrapper () {
   ssh -A ${REMOTE_USER_NAME}@$1
 }
 
