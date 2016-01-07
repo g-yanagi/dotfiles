@@ -16,6 +16,7 @@ NeoBundle 'Shougo/vimproc',{
             \ }
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-rails'
