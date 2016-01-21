@@ -35,11 +35,9 @@ fi
 export ANT_OPTS=-Dfile.encoding=UTF8
 export EDITOR=vi
 export SVN_EDITOR="vim --noplugin"
-export REMOTE_USER_NAME=g-yanagi
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
-
 
 PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
 PATH=$PATH:/usr/ant/bin
@@ -105,10 +103,6 @@ fd () {
   find . -type d -name .svn -prune -o -not -name "*~" -exec grep -H $1 {} \;
 }
 
-f () {
-  find . -type d -name .svn -prune -o -name "$1" -print
-}
-
 nkfu () {
    nkf -w -Lm -d $1
 }
@@ -145,18 +139,6 @@ renv () {
   start_rvm
   rvm use $1
   rvm gemset use $2
-}
-
-msd () {
-  mysql -uroot -e "show databases"
-}
-
-mst () {
-  mysql $1 -uroot -e "show tables"
-}
-
-mss () {
-  mysql $1 -uroot -e "select * from $2"
 }
 
 loop () {

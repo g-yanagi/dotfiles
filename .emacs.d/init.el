@@ -70,6 +70,7 @@
     color-theme-solarized
     htmlize
     markdown-mode
+    org
     )
   "A list of packages to install from MELPA at launch.")
 
@@ -96,6 +97,7 @@
 
 ;; org mode
 (require 'org-install)
+(require 'ox-md nil t)
 ;; org-modeのルートディレクトリ
 (setq org-directory "~/Dropbox/org/")
 ;; org-modeのデフォルトの書き込み先
@@ -103,11 +105,17 @@
 ;; メモとtodo
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
-      '(("t" "Task" entry (file+headline "~/Dropbox/org/tasks.org" "Tasks")
+      '(
+        ("t" "Task" entry (file+headline "~/Dropbox/org/tasks.org" "Tasks")
          "* TODO %T")
+        ("f" "Fodder" entry (file+headline "~/Dropbox/org/fodders.org" "Fodders")
+         "* %T")
         ("m" "Memo" entry (file+headline "~/Dropbox/org/memos.org" "Memos")
          "* %T")
-        ))
+        )
+      )
+
+
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -115,3 +123,54 @@
 ;;; スクロールを一行ずつにする
 (setq scroll-step 1)
 (put 'set-goal-column 'disabled nil)
+
+(global-set-key (kbd "C-c t") 'toggle-truncate-lines)
+
+
+
+
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
+(require 'auto-install)
+(auto-install-update-emacswiki-package-name t)
+(auto-install-compatibility-setup)
+(setq ediff-window-setup-funciton 'ediff-setup-windows-plain)
+
+
+(require 'open-junk-file)
+(global-set-key (kbd "C-c C-z") 'open-junk-file)
+
+(require 'lispxmp)
+(define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp)
+
+(require 'paredit)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+(add-hook 'lisp-mode-hock 'enable-paredit-mode)
+(add-hook 'ielm-mode-hock 'enable-paredit-mode)
+
+;;(autoload 'enable-paredit-mode "paredit"
+;;  "Turn on pseudo-structural editing of Lisp code."
+;;  t)
+
+(require 'auto-async-byte-compile)
+(setq auto-async-byte-compile-exclude-files-regexp "/junk/")
+(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hock 'turn-on-eldoc-mode)
+(setq eldoc-idle-delay 0.2)
+(setq eldoc-minor-mode-string "")
+(show-paren-mode 1)
+(global-set-key (kbd "\C-m") 'newline-and-indent)
+(find-function-setup-keys)
+
+
+
+
+
+
+
+
+
+
