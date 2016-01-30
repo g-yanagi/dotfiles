@@ -10,54 +10,26 @@
         (if (fboundp 'normal-top-level-add-subdirs-to-loadpath)
             (normal-top-level-add-subdirs-to-load-path))))))
 
-;; フォント
-(let ((ws window-system))
-  (cond ((eq ws 'ns)
-         (set-face-attribute 'default nil
-                             :family "Ricty"
-                             :height 140)
-         (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
+(add-to-load-path "lisp")
 
-
-(add-to-load-path
- "lisp"
- "lisp/skk"
- )
-
-(set-keyboard-coding-system 'utf-8)
-
-;; keymap
-(global-set-key "\C-h" 'delete-backward-char)
-
-;; indent
-(setq-default tab-width 2 indent-tabs-mode nil)
-
-;; ビープ音を抑制
-(setq ring-bell-function '(lambda ()))
-
-;; tramp
-(setq tramp-sytax 'url)
-(require 'tramp)
-(setq tramp-default-method "ssh")
-
-;; backup file
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-
-;; menu bar とか
-(custom-set-variables
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
-
-;; marmalade
+;;;;
+;; Packages
+;;;;
 (require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
 ;; install する package list
-(defvar my/packages
+(defvar my-packages
   '(auto-complete
     clojure-mode
     findr
@@ -75,36 +47,69 @@
   "A list of packages to install from MELPA at launch.")
 
 ;; 起動時に存在しない時には自動に install
-(dolist (package my/packages)
-  (when (or (not (package-installed-p package)))
-    (package-install package)))
+(if (eq system-type 'darwin)
+    (add-to-list 'my-packages 'exec-path-from-shell))
 
-;; Interactively Do Things
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 (require 'ido)
 (ido-mode t)
+
+;; フォント
+(let ((ws window-system))
+  (cond ((eq ws 'ns)
+         (set-face-attribute 'default nil
+                             :family "Ricty"
+                             :height 140)
+         (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
+
+;; indent
+(setq-default tab-width 2 indent-tabs-mode nil)
+
+;; backup file
+(custom-set-variables
+ '(make-backup-files nil)
+ '(auto-save-default nil))
+
+;; menu bar とか
+(custom-set-variables
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
 
 ;; カラーテーマ
 (load-theme 'solarized-dark t)
 
-;; skk
-(require 'skk-setup)
-;; C-\ でも SKK に切り替えられるように設定
-(setq default-input-method "japanese-skk")
-;; 送り仮名が厳密に正しい候補を優先して表示
-(setq skk-henkan-strict-okuri-precedence t)
-;;漢字登録時、送り仮名が厳密に正しいかをチェック
-(setq skk-check-okurigana-on-touroku t)
+;; markdown
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; スクロールを一行ずつにする
+(defvar scroll-step 1)
+(put 'set-goal-column 'disabled nil)
+
+;; C-h でバックスペース
+(global-set-key "\C-h" 'delete-backward-char)
+
+;; window 幅で折り返す
+(global-set-key (kbd "C-c t") 'toggle-truncate-lines)
+
+;; ビープ音を抑制
+(defvar ring-bell-function '(lambda ()))
+
+;; 文字コード
+(set-keyboard-coding-system 'utf-8)
 
 ;; org mode
 (require 'org-install)
 (require 'ox-md nil t)
 ;; org-modeのルートディレクトリ
-(setq org-directory "~/Dropbox/org/")
+(defvar org-directory "~/Dropbox/org/")
 ;; org-modeのデフォルトの書き込み先
-(setq org-default-notes-file (concat org-directory "notes.org"))
+(defvar org-default-notes-file (concat org-directory "notes.org"))
 ;; メモとtodo
 (define-key global-map "\C-cc" 'org-capture)
-(setq org-capture-templates
+(defvar org-capture-templates
       '(
         ("t" "Task" entry (file+headline "~/Dropbox/org/tasks.org" "Tasks")
          "* TODO %T")
@@ -115,28 +120,15 @@
         )
       )
 
-
-
-;; markdown
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;;; スクロールを一行ずつにする
-(setq scroll-step 1)
-(put 'set-goal-column 'disabled nil)
-
-(global-set-key (kbd "C-c t") 'toggle-truncate-lines)
-
-
-
-
-
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
+;; auto-install
+(add-to-load-path "auto-install")
 (require 'auto-install)
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
-(setq ediff-window-setup-funciton 'ediff-setup-windows-plain)
+(custom-set-variables
+ '(ediff-window-setup-funciton 'ediff-setup-windows-plain))
 
-
+;; junk file 
 (require 'open-junk-file)
 (global-set-key (kbd "C-c C-z") 'open-junk-file)
 
@@ -144,26 +136,31 @@
 (define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp)
 
 (require 'paredit)
+(define-key paredit-mode-map "\C-j" 'eval-print-last-sexp)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hock 'enable-paredit-mode)
 (add-hook 'ielm-mode-hock 'enable-paredit-mode)
 
-;;(autoload 'enable-paredit-mode "paredit"
-;;  "Turn on pseudo-structural editing of Lisp code."
-;;  t)
-
 (require 'auto-async-byte-compile)
-(setq auto-async-byte-compile-exclude-files-regexp "/junk/")
+(custom-set-variables
+ '(auto-async-byte-compile-exclude-files-regexp "/junk/")
+ '(eldoc-idle-delay 0.2)
+ '(eldoc-minor-mode-string ""))
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hock 'turn-on-eldoc-mode)
-(setq eldoc-idle-delay 0.2)
-(setq eldoc-minor-mode-string "")
 (show-paren-mode 1)
 (global-set-key (kbd "\C-m") 'newline-and-indent)
 (find-function-setup-keys)
+
+
+
+
+
+
+
 
 
 
