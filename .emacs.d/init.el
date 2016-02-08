@@ -1,17 +1,4 @@
 ;; -*- mode: emacs-lisp; coding: utf-8; indent-tabs-mode: nil -*-
-
-;; path 追加用
-(defun add-to-load-path (&rest paths)
-  (let (path)
-    (dolist (path paths paths)
-      (let ((default-directory
-              (expand-file-name (concat user-emacs-directory path))))
-        (add-to-list 'load-path default-directory)
-        (if (fboundp 'normal-top-level-add-subdirs-to-loadpath)
-            (normal-top-level-add-subdirs-to-load-path))))))
-
-(add-to-load-path "lisp")
-
 ;;;;
 ;; Packages
 ;;;;
@@ -31,7 +18,6 @@
 ;; install する package list
 (defvar my-packages
   '(auto-complete
-    clojure-mode
     findr
     inflections
     jump
@@ -43,6 +29,16 @@
     htmlize
     markdown-mode
     org
+    paredit
+    clojure-mode    
+    clojure-mode-extra-font-locking
+    cider
+    ido-ubiquitous
+    smex
+    projectile
+    rainbow-delimiters
+    tagedit
+;    magit
     )
   "A list of packages to install from MELPA at launch.")
 
@@ -53,6 +49,10 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/.emacs.d/auto-install")
+(add-to-list 'load-path "~/dotfiles/.emacs.d/customizations")
 
 (require 'ido)
 (ido-mode t)
@@ -121,7 +121,7 @@
       )
 
 ;; auto-install
-(add-to-load-path "auto-install")
+
 (require 'auto-install)
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
@@ -145,6 +145,7 @@
 (require 'auto-async-byte-compile)
 (custom-set-variables
  '(auto-async-byte-compile-exclude-files-regexp "/junk/")
+ '(auto-async-byte-compile-exclude-files-regexp "init.el")
  '(eldoc-idle-delay 0.2)
  '(eldoc-minor-mode-string ""))
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
@@ -156,8 +157,30 @@
 (find-function-setup-keys)
 
 
+;; Sets up exec-path-from-shell so that Emacs will use the correct
+;; environment variables
+(load "shell-integration.el")
 
+;; These customizations make it easier for you to navigate files,
+;; switch buffers, and choose options from the minibuffer.
+(load "navigation.el")
 
+;; These customizations change the way emacs looks and disable/enable
+;; some user interface elements
+(load "ui.el")
+
+;; These customizations make editing a bit nicer.
+(load "editing.el")
+
+;; Hard-to-categorize customizations
+(load "misc.el")
+
+;; For editing lisps
+(load "elisp-editing.el")
+
+;; Langauage-specific
+(load "setup-clojure.el")
+(load "setup-js.el")
 
 
 
