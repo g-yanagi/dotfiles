@@ -296,3 +296,6 @@ endfunction
 autocmd FileType int-* call s:interactive_settings()
 function! s:interactive_settings()
 endfunction
+
+" tmux で色落ちする問題対策
+set t_ut=
