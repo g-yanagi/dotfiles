@@ -88,6 +88,23 @@ alias portcheck="sudo netstat -anp"
 alias vi="vim -u NONE --noplugin"
 alias neobundleupdate="~/.vim/bundle/neobundle.vim/bin/neoinstall"
 
+alias h1="head -n 10"
+alias h2="head -n 20"
+alias h3="head -n 30"
+alias h4="head -n 40"
+alias h5="head -n 50"
+
+alias a1="awk '{print "'$1'"}'"
+alias a2="awk '{print "'$2'"}'"
+alias a3="awk '{print "'$3'"}'"
+alias a4="awk '{print "'$4'"}'"
+alias a5="awk '{print "'$5'"}'"
+
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log"
+alias gsm="git status | grep modified"
+
 #######################################################################
 # functions
 #######################################################################
