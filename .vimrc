@@ -26,7 +26,6 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'Align'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'othree/html5.vim'
@@ -42,6 +41,11 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'hitode7456/vim-jsm'
+NeoBundle 'moll/vim-node'
+NeoBundle 'mattn/jscomplete-vim'
+NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'scrooloose/syntastic'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -115,6 +119,7 @@ colorscheme elflord
 autocmd BufNewFile,BufRead *.json   set ft=json
 autocmd BufNewFile,BufRead *.mfj    set ft=json
 autocmd BufNewFile,BufRead *.jsm    set ft=jsm
+autocmd BufNewFile,BufRead *.ejs    set ft=html
 
 autocmd FileType go     autocmd BufWritePre <buffer> Fmt
 autocmd FileType ruby   setl sw=2 sts=2 et
@@ -299,3 +304,31 @@ endfunction
 
 " tmux で色落ちする問題対策
 set t_ut=
+
+" jscomplete-vim
+setl omnifunc=jscomplete#CompleteJS
+
+" vim-nodejs-complete
+setl omnifunc=jscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+    let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+let g:node_usejscomplete = 1
+
+" syntastic
+let g:syntastic_check_on_open=0 "ファイルを開いたときはチェックしない
+let g:syntastic_check_on_save=1 "保存時にはチェック
+let g:syntastic_check_on_wq = 0 " wqではチェックしない
+let g:syntastic_auto_loc_list=1 "エラーがあったら自動でロケーションリストを開く
+let g:syntastic_loc_list_height=6 "エラー表示ウィンドウの高さ
+set statusline+=%#warningmsg# "エラーメッセージの書式
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint'] "ESLintを使う
+let g:syntastic_mode_map = {
+      \ 'mode': 'active',
+      \ 'active_filetypes': ['javascript'],
+      \ 'passive_filetypes': []
+      \ }
+

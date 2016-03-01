@@ -39,7 +39,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 
-PATH=~/Bin:/usr/local/bin:/usr/bin:/bin
+PATH=$PATH:~/Bin:/usr/local/bin:/usr/bin:/bin
 PATH=$PATH:/usr/ant/bin
 PATH=$PATH:$NODE_PATH
 PATH=$PATH:/usr/local/mysql/bin
