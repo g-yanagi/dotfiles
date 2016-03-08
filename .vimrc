@@ -46,6 +46,7 @@ NeoBundle 'mattn/jscomplete-vim'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'elzr/vim-json'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -332,3 +333,5 @@ let g:syntastic_mode_map = {
       \ 'passive_filetypes': []
       \ }
 
+" vim-json
+let g:vim_json_syntax_conceal = 0
