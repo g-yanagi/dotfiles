@@ -47,6 +47,7 @@ NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'kien/rainbow_parentheses.vim'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -335,3 +336,9 @@ let g:syntastic_mode_map = {
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+
+" rainbow_parentheses.vim
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+

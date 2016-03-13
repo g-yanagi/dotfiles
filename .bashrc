@@ -38,17 +38,16 @@ export SVN_EDITOR="vim --noplugin"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
+export GOPATH=$HOME/go
 
-PATH=$PATH:~/Bin:/usr/local/bin:/usr/bin:/bin
-PATH=$PATH:/usr/ant/bin
-PATH=$PATH:$NODE_PATH
-PATH=$PATH:/usr/local/mysql/bin
-PATH=$PATH:$HOME/.rvm/bin
-PATH=$PATH:/usr/local/share/npm/bin
+PATH=$HOME/bin:$HOME/Bin:/usr/local/bin:/usr/bin:/bin:$PATH
+PATH=/usr/ant/bin:$PATH
+PATH=$NODE_PATH:$PATH
+PATH=/usr/local/mysql/bin:$PATH
+PATH=/usr/local/share/npm/bin:$PATH
+PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 export PATH
 
-export GOPATH=$HOME/go
-export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
 #######################################################################
 # aliases
