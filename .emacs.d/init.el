@@ -81,6 +81,9 @@
 ;; カラーテーマ
 (load-theme 'solarized-dark t)
 
+;; 透過
+(add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
+
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
