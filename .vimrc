@@ -115,8 +115,8 @@ set foldmethod=marker
 set ambiwidth=double
 
 " 色
-set background=dark
-colorscheme elflord
+"set background=dark
+"colorscheme elflord
 
 autocmd BufNewFile,BufRead *.json   set ft=json
 autocmd BufNewFile,BufRead *.mfj    set ft=json
