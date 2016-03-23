@@ -99,11 +99,6 @@ alias a3="awk '{print "'$3'"}'"
 alias a4="awk '{print "'$4'"}'"
 alias a5="awk '{print "'$5'"}'"
 
-alias gs="git status"
-alias gd="git diff"
-alias gl="git log"
-alias gsm="git status | grep modified"
-
 #######################################################################
 # functions
 #######################################################################
