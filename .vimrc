@@ -122,6 +122,7 @@ autocmd BufNewFile,BufRead *.json   set ft=json
 autocmd BufNewFile,BufRead *.mfj    set ft=json
 autocmd BufNewFile,BufRead *.jsm    set ft=jsm
 autocmd BufNewFile,BufRead *.ejs    set ft=html
+autocmd BufNewFile,BufRead *.volt   set ft=htmldjango
 
 autocmd FileType go     autocmd BufWritePre <buffer> Fmt
 autocmd FileType ruby   setl sw=2 sts=2 et

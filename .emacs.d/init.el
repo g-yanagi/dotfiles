@@ -79,7 +79,9 @@
  '(tool-bar-mode nil))
 
 ;; カラーテーマ
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+(load-theme 'manoj-dark t)
+
 
 ;; 透過
 (add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
