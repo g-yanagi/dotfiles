@@ -3,9 +3,9 @@ display settings for gvim
 " colorscheme railscasts
 " set background=dark
 " colorscheme desert
-' set showtabline=2
-set background=dark
-colorscheme solarized
+" set showtabline=2
+" set background=dark
+" colorscheme solarized
 
 
 

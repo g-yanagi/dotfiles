@@ -25,7 +25,7 @@
     popup
     smartrep
     web-mode
-    color-theme-solarized
+;;    color-theme-solarized
     htmlize
     markdown-mode
     org
@@ -36,7 +36,7 @@
     ido-ubiquitous
     smex
     projectile
-    rainbow-delimiters
+;;    rainbow-delimiters
     tagedit
 ;    magit
     )
@@ -62,7 +62,7 @@
   (cond ((eq ws 'ns)
          (set-face-attribute 'default nil
                              :family "Ricty"
-                             :height 140)
+                             :height 180)
          (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
 
 ;; indent
@@ -81,7 +81,6 @@
 ;; カラーテーマ
 ;;(load-theme 'solarized-dark t)
 (load-theme 'manoj-dark t)
-
 
 ;; 透過
 (add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
@@ -126,7 +125,6 @@
       )
 
 ;; auto-install
-
 (require 'auto-install)
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
@@ -161,41 +159,31 @@
 (global-set-key (kbd "\C-m") 'newline-and-indent)
 (find-function-setup-keys)
 
+;; ;; Sets up exec-path-from-shell so that Emacs will use the correct
+;; ;; environment variables
+;; (load "shell-integration.el")
 
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
-(load "shell-integration.el")
+;; ;; These customizations make it easier for you to navigate files,
+;; ;; switch buffers, and choose options from the minibuffer.
+;; (load "navigation.el")
 
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-(load "navigation.el")
+;; ;; These customizations change the way emacs looks and disable/enable
+;; ;; some user interface elements
+;; (load "ui.el")
 
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
+;; ;; These customizations make editing a bit nicer.
+;; (load "editing.el")
 
-;; These customizations make editing a bit nicer.
-(load "editing.el")
+;; ;; Hard-to-categorize customizations
+;; (load "misc.el")
 
-;; Hard-to-categorize customizations
-(load "misc.el")
+;; ;; For editing lisps
+;; (load "elisp-editing.el")
 
-;; For editing lisps
-(load "elisp-editing.el")
+;; ;; Langauage-specific
+;; (load "setup-clojure.el")
+;; (load "setup-js.el")
 
-;; Langauage-specific
-(load "setup-clojure.el")
-(load "setup-js.el")
-
-
-
-
-
-
-
-
-
-
-
-
-
+;;; SKK
+(global-set-key (kbd "C-x C-j") 'skk-mode) ; C-x C-j で skk モードを起動
+(setq skk-byte-compile-init-file t) ; .skk を自動的にバイトコンパイル

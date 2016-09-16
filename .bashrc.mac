@@ -2,17 +2,17 @@
 #######################################################################
 # environmental variables
 #######################################################################
-export JAVA_HOME=`/usr/libexec/java_home`
+# export JAVA_HOME=`/usr/libexec/java_home`
 
-PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
+# PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
 PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
-PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
+# PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
 PATH=$PATH:/sbin/
 
 #######################################################################
 # aliases
 #######################################################################
-alias find="gfind"
-alias ls="gls --color=auto"
+# alias find="gfind"
+# alias ls="gls --color=auto"
 
 unset DYLD_LIBRARY_PATH
