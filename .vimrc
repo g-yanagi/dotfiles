@@ -48,11 +48,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'SQLUtilities'
+NeoBundle 'dracula/vim'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -111,7 +107,6 @@ set tabstop=4 shiftwidth=4 softtabstop=0
 " ステータスバー
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w
-set statusline+=[%{cfi#get_func_name()}()]
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
 set statusline+=%=%l/%L,%c%V%8P
 " fold
@@ -121,9 +116,8 @@ set foldmethod=marker
 set ambiwidth=double
 
 " 色
-" set background=dark
-" set background=light
-" colorscheme elflord
+set background=dark
+colorscheme elflord
 
 autocmd BufNewFile,BufRead *.json   set ft=json
 autocmd BufNewFile,BufRead *.mfj    set ft=json
@@ -136,6 +130,7 @@ autocmd FileType ruby   setl sw=2 sts=2 et
 autocmd FileType eruby  setl sw=2 sts=2 et
 autocmd FileType coffee setl sw=2 sts=2 et
 autocmd FileType js     setl sw=4 sts=4 et
+autocmd FileType yaml   setl sw=2 sts=2 et
 
 " 全角スペースを目立たせる
 highlight link ZenkakuSpace Error
@@ -349,7 +344,4 @@ let g:vim_json_syntax_conceal = 0
 " rainbow_parentheses.vim
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-
-" markdown
-let g:vim_markdown_conceal = 0
 
