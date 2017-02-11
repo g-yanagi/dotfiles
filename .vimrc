@@ -78,7 +78,7 @@ set expandtab
 " 自動的に改行しないようにする
 set textwidth=0
 " 行番号
-set number
+" set number
 " 入力中から詮索できるようにする
 set incsearch
 " 検索にマッチした語をハイライト

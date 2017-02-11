@@ -4,9 +4,8 @@ display settings for gvim
 " set background=dark
 " colorscheme desert
 " set showtabline=2
-" set background=dark
-" colorscheme solarized
-
+set background=dark
+colorscheme dracula
 
 
 " window size
