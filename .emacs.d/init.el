@@ -40,6 +40,7 @@
     dracula-theme
     clj-refactor
     use-package
+    yaml-mode
     )
   "A list of packages to install from MELPA at launch.")
 
@@ -57,14 +58,6 @@
 
 (require 'ido)
 (ido-mode t)
-
-;; フォント
-(let ((ws window-system))
-  (cond ((eq ws 'ns)
-         (set-face-attribute 'default nil
-                             :family "Ricty"
-                             :height 160)
-         (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
 
 ;; indent
 (setq-default tab-width 2 indent-tabs-mode nil)
@@ -86,7 +79,7 @@
 
 
 ;; 透過
-;; (add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
+;;(add-to-list 'default-frame-alist '(alpha . (0.80 0.80)))
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -230,7 +223,6 @@
                              :height 160)
          (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty")))))
 
-
 ;; php-mode
 (setq php-mode-force-pear t)
 (add-hook 'php-mode-hook
@@ -238,3 +230,19 @@
             (setq tab-width 4)
             (setq c-basic-offset 4)
             (setq indent-tabs-mode nil)))
+
+;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+;; deft
+(require 'deft)
+(setq deft-directory "~/deft/org")
+(setq deft-extension "org")
+(setq deft-text-mode 'org-mode)
+(setq deft-use-filename-as-title t)
+(setq deft-auto-save-interval 0)
+(put 'downcase-region 'disabled nil)
+
+;; linum-mode off
+(global-linum-mode 0)

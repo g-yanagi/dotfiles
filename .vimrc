@@ -49,6 +49,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'dracula/vim'
+NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'dag/vim-fish'
 call neobundle#end()
 
 filetype plugin indent on     " required!
@@ -110,7 +112,7 @@ set statusline=%<%f\ %m%r%h%w
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
 set statusline+=%=%l/%L,%c%V%8P
 " fold
-set foldmethod=marker
+" set foldmethod=marker
 
 " □とか○の文字があってもカーソル位置がずれないようにする
 set ambiwidth=double
@@ -131,6 +133,7 @@ autocmd FileType eruby  setl sw=2 sts=2 et
 autocmd FileType coffee setl sw=2 sts=2 et
 autocmd FileType js     setl sw=4 sts=4 et
 autocmd FileType yaml   setl sw=2 sts=2 et
+autocmd FileType fish
 
 " 全角スペースを目立たせる
 highlight link ZenkakuSpace Error
