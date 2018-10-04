@@ -118,8 +118,8 @@ set statusline+=%=%l/%L,%c%V%8P
 set ambiwidth=double
 
 " 色
-set background=dark
-colorscheme elflord
+" set background=light
+" colorscheme elflord
 
 autocmd BufNewFile,BufRead *.json   set ft=json
 autocmd BufNewFile,BufRead *.mfj    set ft=json
