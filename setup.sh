@@ -2,7 +2,7 @@
 
 os=$(uname)
 
-DOT_FILES=(.screenrc .vimrc .gvimrc .tmux.conf .bashrc .bashrc.mac)
+DOT_FILES=(.screenrc .vimrc .gvimrc .tmux.conf .bashrc .bashrc.mac .aspell.conf .spacemacs)
 
 for file in ${DOT_FILES[@]}
 do
@@ -35,11 +35,15 @@ fi
 
 if [ ${os} = "Darwin" ]
 then
+
+  # brew を install
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
   # Ricty font の install
   brew tap sanemat/font
   brew install ricty
 
-  ## brew をインストールする行を
+  # brew をインストールする行を
 
   cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
   eval $cmd
