@@ -39,6 +39,8 @@ then
   brew tap sanemat/font
   brew install ricty
 
+  ## brew をインストールする行を
+
   cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
   eval $cmd
 
