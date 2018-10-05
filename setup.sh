@@ -37,22 +37,82 @@ if [ ${os} = "Darwin" ]
 then
 
   # brew を install
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  which brew > /dev/null
+  if [ $? -ne 0 ]
+  then
+
+    echo "install brew"
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  else
+
+    echo "brew exists"
+
+  fi
 
   # Ricty font の install
-  brew tap sanemat/font
-  brew install ricty
+  brew info ricty > /dev/null
+  if [ $? -ne 0 ]
+  then
 
-  # brew をインストールする行を
+    echo "install ricty font"
 
-  cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
-  eval $cmd
+    brew tap sanemat/font
 
-  git clone https://github.com/Lokaltog/vim-powerline ~/.vim-powerline
-  fontforge -lang=py -script ~/.vim-powerline/fontpatcher/fontpatcher ~/Library/Fonts/Ricty-Regular.ttf
+    brew install ricty
 
-  mv -f *.ttf ~/Library/Fonts/
+    cmd=$(brew info ricty | grep "Ricty\*.ttf" | sed -e "s/.*\(cp -f.*\)/\1/")
 
-  # wait a minute
-  fc-cache -vf
+    eval $cmd
+
+    git clone https://github.com/Lokaltog/vim-powerline ~/.vim-powerline
+
+    fontforge -lang=py -script ~/.vim-powerline/fontpatcher/fontpatcher ~/Library/Fonts/Ricty-Regular.ttf
+
+    mv -f *.ttf ~/Library/Fonts/
+
+    # wait a minute
+    fc-cache -vf
+
+  else
+
+    echo "ricty font exists"
+
+  fi
+
+  # fish を install
+  which fish > /dev/null
+  if [ $? -ne 0 ]
+  then
+
+      echo "install fish shell"
+
+      brew install fish
+
+  else
+
+      echo "fish shell exists"
+
+  fi
+
+  grep fish /etc/shells > /dev/null
+  if [ $? -ne 0 ]
+  then
+
+    echo "add fish shell to /etc/shells"
+
+    sudo ehco "/usr/local/bin/fish" >> /etc/shells
+
+  fi
+
+  if [ "/usr/local/bin/fish" != "${SHELL}" ]
+  then
+
+    echo "change shell to fish"
+
+    chsh -s /usr/local/bin/fish
+
+  fi
+
 fi
