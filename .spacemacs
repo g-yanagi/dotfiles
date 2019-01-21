@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     sql
      html
      yaml
      plantuml
@@ -369,8 +370,8 @@ you should place your code here."
   ;; ちらつき防止
   (setq redisplay-dont-pause nil)
 
-  ;; markdown mode で font の幅を変えない
   (custom-set-faces
+   ;; markdown mode で font の幅を変えない
    ;;'(markdown-code-face ((t (:inherit default :background "#6e8fa1"))))
    '(markdown-header-face-1 ((t (:inherit default :height 1.0 :weight bold))))
    '(markdown-header-face-2 ((t (:inherit default :height 1.0 :weight bold))))
@@ -381,10 +382,40 @@ you should place your code here."
    '(markdown-code-face ((t (:inherit default))))
    '(markdown-pre-face ((t (:inherit font-lock-constant-face))))
    '(markdown-inline-code-face ((t (:inherit default :foreground "#6e8fa1"))))
+
+   ;; org mode でfont の幅を変えない
+   '(org-level-1 ((t (:weight semi-bold :height 1.0))))
+   '(org-level-2 ((t (:weight semi-bold :height 1.0))))
+   '(org-level-3 ((t (:weight semi-bold :height 1.0))))
+   '(org-level-4 ((t (:weight semi-bold :height 1.0))))
+
    )
 
   ;; code block で syntax highlight する
   (setq markdown-fontify-code-blocks-natively t)
+
+
+  ;; pixel size でのリサイズ
+  (setq frame-resize-pixelwise t)
+
+  (defun set-alpha (alpha-num)
+    "set frame parameter 'alpha"
+    (interactive "nAlpha: ")
+    (set-frame-parameter nil 'alpha (cons alpha-num '(90))))
+
+
+  ;; 日付を挿入する
+  (defun insert-current-time()
+    (interactive)
+    (insert (format-time-string "%Y%m%d" (current-time))))
+
+  (define-key global-map "\C-cd" `insert-current-time)
+
+  ;; yassnippet
+  (setq yas-snippet-dirs
+        '("~/.yasnippet-snippets/yasnippet-snippets" "~/.emacs.d/snippets"))
+
+  (yas-global-mode 1)
 
  )
 
@@ -397,7 +428,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (gradle-mode dockerfile-mode memoize eros go-guru go-eldoc go-mode protobuf-mode tern web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode yaml-mode plantuml-mode insert-shebang fish-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby clj-refactor inflections edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic vmd-mode w3m web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode mmm-mode markdown-toc markdown-mode gh-md phpunit phpcbf php-extras php-auto-yasnippets yasnippet drupal-mode php-mode restclient wgrep smex ivy-hydra counsel-projectile counsel swiper ivy ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (yasnippet-snippets sql-indent vue-mode vue-html-mode gradle-mode dockerfile-mode memoize eros go-guru go-eldoc go-mode protobuf-mode tern web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode yaml-mode plantuml-mode insert-shebang fish-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby clj-refactor inflections edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic vmd-mode w3m web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode mmm-mode markdown-toc markdown-mode gh-md phpunit phpcbf php-extras php-auto-yasnippets yasnippet drupal-mode php-mode restclient wgrep smex ivy-hydra counsel-projectile counsel swiper ivy ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -411,4 +442,8 @@ you should place your code here."
  '(markdown-header-face-5 ((t (:inherit default :height 1.0 :weight bold))))
  '(markdown-header-face-6 ((t (:inherit default :height 1.0 :weight bold))))
  '(markdown-inline-code-face ((t (:inherit default :foreground "#6e8fa1"))))
- '(markdown-pre-face ((t (:inherit font-lock-constant-face)))))
+ '(markdown-pre-face ((t (:inherit font-lock-constant-face))))
+ '(org-level-1 ((t (:weight semi-bold :height 1.0))))
+ '(org-level-2 ((t (:weight semi-bold :height 1.0))))
+ '(org-level-3 ((t (:weight semi-bold :height 1.0))))
+ '(org-level-4 ((t (:weight semi-bold :height 1.0)))))
