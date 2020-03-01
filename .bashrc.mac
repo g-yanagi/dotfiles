@@ -6,7 +6,7 @@ export JAVA_HOME=`/usr/libexec/java_home`
 
 PATH=$PATH:$(brew --prefix coreutils)/libexec/gnubin
 PATH=$PATH:/Library/Frameworks/JRuby.framework/Versions/Current/bin
-PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
+# PATH=$PATH:$(gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}')
 PATH=$PATH:/sbin/
 
 #######################################################################
