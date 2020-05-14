@@ -1,0 +1,8 @@
+.config/nvim/dein
+.config/nvim/tags*
+.config/nvim/.netrwhist
+.config/nvim/pythonpath.vim
+.config/nvim/nodepath.vim
+.config/nvim/autoload/plugged/*
+.config/nvim/session
+.config/nvim/general/paths.vim
