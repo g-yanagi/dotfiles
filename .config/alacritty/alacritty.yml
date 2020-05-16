@@ -16,13 +16,13 @@ dynamic_title: true
 # Font Customization
 font:
   normal:
-    family: Fira Code
+    family: FiraCode Nerd Font Mono
     style: Regular
   bold:
-    family: Fira Code
+    family: FiraCode Nerd Font Mono
     style: Bold
   italic:
-    family: Fira Code
+    family: FiraCode Nerd Font Mono
     style: Italic
   size: 13.25
   offset:
@@ -31,7 +31,7 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  use_thin_strokes: false
+  use_thin_strokes: true
   debug:
     persistent_logging: false
 draw_bold_text_with_bright_colors: true
@@ -72,8 +72,3 @@ cursor:
 
 key_bindings:
   - { key: N, mods: Control, action: SpawnNewInstance }
-
-#||\\ //||
-#|| \// || Mackenzie Criswell
-#|| //\ || https://makc.co
-#||   \\|| https://github.com/makccr
