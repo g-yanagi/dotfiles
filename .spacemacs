@@ -361,7 +361,7 @@ you should place your code here."
   (eval-after-load "ispell"
     '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
 
-  (load (expand-file-name "~/.roswell/helper.el"))
+  ;; (load (expand-file-name "~/.roswell/helper.el"))
 
   ;; plantuml
   (setq plantuml-jar-path "/usr/local/Cellar/plantuml/1.2018.2/libexec/plantuml.jar")
