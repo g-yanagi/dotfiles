@@ -15,10 +15,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+  Plug 'dense-analysis/ale'
+
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
   Plug 'mhinz/vim-startify'
+
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
+
+  Plug 'ianks/vim-tsx'
+  Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
