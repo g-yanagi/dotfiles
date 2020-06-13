@@ -38,14 +38,14 @@ export SVN_EDITOR="vim --noplugin"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
-export GOPATH=$HOME/go
+# export GOPATH=$HOME/go
 
 PATH=$HOME/bin:$HOME/Bin:/usr/local/bin:/usr/bin:/bin:$PATH
 PATH=/usr/ant/bin:$PATH
 PATH=$NODE_PATH:$PATH
 PATH=/usr/local/mysql/bin:$PATH
 PATH=/usr/local/share/npm/bin:$PATH
-PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
+# PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 export PATH
 
 
@@ -193,3 +193,9 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
