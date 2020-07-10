@@ -5,3 +5,4 @@
 .config/nvim/nodepath.vim
 .config/nvim/autoload/plugged/*
 .config/nvim/session
+.config/vifm/vifminfo
