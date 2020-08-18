@@ -37,6 +37,7 @@ set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
+set nonumber
 " set mmp=1300
 " set autochdir                           " Your working directory will always be the same as your working directory
 " set foldcolumn=2                        " Folding abilities
@@ -48,4 +49,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " You can't stop me
 cmap w!! w !sudo tee %
 
+au FileType go set noexpandtab
+au FileType go set shiftwidth=2
+au FileType go set softtabstop=2
+au FileType go set tabstop=2
 
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx

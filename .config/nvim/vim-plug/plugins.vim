@@ -25,8 +25,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
 
-  Plug 'ianks/vim-tsx'
   Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
