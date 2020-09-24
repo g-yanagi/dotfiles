@@ -28,6 +28,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
+  Plug 'kamykn/spelunker.vim'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
