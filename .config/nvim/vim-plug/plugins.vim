@@ -30,6 +30,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'kamykn/spelunker.vim'
 
+  Plug 'sebdah/vim-delve', { 'for': ['go'] }
+
+  Plug 'benmills/vimux'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
