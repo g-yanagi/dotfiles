@@ -14,3 +14,5 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/vim-markdown.vim
+source $HOME/.config/nvim/plug-config/spelunker.vim
+source $HOME/.config/nvim/plug-config/delve.vim
