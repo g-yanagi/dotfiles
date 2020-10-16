@@ -28,6 +28,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
+  Plug 'jceb/vim-orgmode'
+
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

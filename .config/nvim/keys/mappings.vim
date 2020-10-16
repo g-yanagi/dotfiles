@@ -33,7 +33,6 @@ nnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -45,4 +44,6 @@ nnoremap <C-l> <C-w>l
 " nnoremap <M-k>    :resize +2<CR>
 " nnoremap <M-h>    :vertical resize -2<CR>
 " nnoremap <M-l>    :vertical resize +2<CR>
+
+tnoremap <silent> <ESC> <C-\><C-n>
 
