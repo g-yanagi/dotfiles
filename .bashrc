@@ -55,6 +55,7 @@ alias s="sudo"
 alias v="vim"
 alias r="rsync"
 alias p="ps aux | grep"
+alias k="kubectl"
 
 alias bashrc=". ~/.bashrc"
 alias ls="ls --color"
@@ -105,7 +106,7 @@ fi
 # source todo_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
