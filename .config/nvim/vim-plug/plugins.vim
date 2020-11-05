@@ -10,8 +10,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'christianchiarulli/onedark.vim'
 
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+"  Plug 'vim-airline/vim-airline'
+"  Plug 'vim-airline/vim-airline-themes'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

@@ -15,12 +15,12 @@
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
   "coc.preferences.extensionUpdateCheck": "daily",
-
+ 
   "languageserver": {
     "flow": {
       "command": "flow",
