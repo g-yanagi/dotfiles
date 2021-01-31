@@ -63,6 +63,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'junegunn/vim-easy-align'
 
+  Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
