@@ -10,8 +10,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'christianchiarulli/onedark.vim'
 
-"  Plug 'vim-airline/vim-airline'
-"  Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -38,6 +38,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'sebdah/vim-delve', { 'for': ['go'] }
 
   Plug 'benmills/vimux'
+
+  Plug 'tpope/vim-commentary'
+
+  Plug 'tpope/vim-surround'
 
 call plug#end()
 

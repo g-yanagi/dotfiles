@@ -95,14 +95,6 @@ fi
 # Read other configuration files
 #######################################################################
 
-if [ -f ~/.bashrc.mac ]; then
-  . ~/.bashrc.mac
-fi
-
-if [ -f ~/.bashrc.local ]; then
-  . ~/.bashrc.local
-fi
-
 # source todo_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -113,3 +105,20 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH="$HOME/.goenv/bin:$PATH"
+export GOENV_DISABLE_GOPATH=1
+eval "$(goenv init -)"
+
+
+if [ -f ~/.bashrc.mac ]; then
+  . ~/.bashrc.mac
+fi
+
+if [ -f ~/.bashrc.local ]; then
+  . ~/.bashrc.local
+fi
+
+# eval "$(starship init bash)"
+

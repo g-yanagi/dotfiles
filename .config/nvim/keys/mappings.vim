@@ -47,3 +47,7 @@ nnoremap <C-l> <C-w>l
 
 tnoremap <silent> <ESC> <C-\><C-n>
 
+
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
