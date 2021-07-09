@@ -8,7 +8,9 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  Plug 'christianchiarulli/onedark.vim'
+  " Plug 'christianchiarulli/onedark.vim'
+
+  Plug 'cocopon/iceberg.vim'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -43,6 +45,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'tpope/vim-surround'
 
+  Plug 'prettier/vim-prettier', {
+        \ 'do': 'yarn install',
+        \ 'for': ['typescript.tsx', 'javascript'] }
+
+  Plug 'neoclide/jsonc.vim'
+
+  Plug 'dracula/vim', { 'as': 'dracula' }
+
+  Plug 'codota/tabnine-vim'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -50,3 +62,5 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+
+let g:prettier#config#single_quote = 'true'

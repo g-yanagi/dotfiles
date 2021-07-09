@@ -17,3 +17,5 @@ then
     mkdir $HOME/.emacs.d
     ln -s $HOME/dotfiles/.emacs.d/init.el  $$HOME/.emacs.d/init.el
 fi
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
