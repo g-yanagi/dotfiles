@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-  Plug 'dense-analysis/ale'
+"   Plug 'dense-analysis/ale'
 
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -54,6 +54,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'dracula/vim', { 'as': 'dracula' }
 
   Plug 'codota/tabnine-vim'
+
+  Plug 'lambdalisue/fern.vim'
+
+  Plug 'antoinemadec/FixCursorHold.nvim'
+
+  Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
