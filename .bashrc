@@ -28,6 +28,7 @@ fi
 
 export EDITOR=nvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
+export HISTSIZE=100000
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 # export GOPATH=$HOME/go
@@ -52,7 +53,7 @@ alias h="ssh_wrapper"
 alias l="ls"
 alias m="man"
 alias s="sudo"
-alias v="vim"
+alias v="nvim"
 alias r="rsync"
 alias p="ps aux | grep"
 alias k="kubectl"
@@ -66,6 +67,19 @@ alias sdiff="svn diff | vim -R -"
 alias start_rvm='source ~/.rvm/scripts/rvm'
 alias portcheck="sudo netstat -anp"
 alias vi="vim -u NONE --noplugin"
+alias gs="git status"
+alias gb="git branch"
+alias gu="git up"
+alias gd="git diff"
+alias gc="git checkout"
+alias gco="git checkout"
+alias gl="git log"
+alias ga="git add"
+alias gm="git commit"
+alias gcm="git commit"
+alias gp="git push"
+alias gpo="git push origin"
+alias gcom="git checkout master"
 
 alias h1="head -n 10"
 alias h2="head -n 20"
@@ -107,6 +121,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+nvm use
 
 ## golang
 export PATH="$HOME/.goenv/bin:$PATH"

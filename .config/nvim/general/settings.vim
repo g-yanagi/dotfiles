@@ -51,8 +51,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 cmap w!! w !sudo tee %
 
 au FileType go set noexpandtab
-au FileType go set shiftwidth=2
-au FileType go set softtabstop=2
-au FileType go set tabstop=2
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+
+au TermOpen * setlocal nospell

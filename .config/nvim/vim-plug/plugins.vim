@@ -61,6 +61,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'airblade/vim-gitgutter'
 
+  Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

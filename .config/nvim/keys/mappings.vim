@@ -34,10 +34,10 @@ nnoremap <C-c> <Esc>
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " Use alt + hjkl to resize windows
 " nnoremap <M-j>    :resize -2<CR>
@@ -47,7 +47,11 @@ nnoremap <C-l> <C-w>l
 
 tnoremap <silent> <ESC> <C-\><C-n>
 
-
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
+" Tab
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-k> :tabnext<CR>
+nnoremap <C-l> :tabprevious<CR>
