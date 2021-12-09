@@ -6,3 +6,4 @@
 .config/nvim/autoload/plugged/*
 .config/nvim/session
 .config/vifm/vifminfo
+.config/coc/extensions
