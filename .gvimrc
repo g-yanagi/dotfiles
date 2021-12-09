@@ -26,5 +26,5 @@ set guioptions-=l " no left scrollbar
 set guioptions-=L " no left scrollbar
 
 " set guifont=Ricty:h14
-set guifont=Migu_1M:h14
+set guifont=Migu_1M:h20
 

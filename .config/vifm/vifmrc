@@ -41,7 +41,10 @@ filetype *.pdf
        \ open -a Preview.app,
        \ {Open in Skim}
        \ open -a Skim.app,
-fileviewer *.pdf pdftotext -nopgbrk %c -
+" fileviewer *.pdf pdftotext -nopgbrk %c -
+
+fileviewer *.pdf
+  \ pdftotext %c -
 
 filetype *.ps,*.eps open -a Preview.app
 

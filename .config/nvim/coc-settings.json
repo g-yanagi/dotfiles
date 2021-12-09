@@ -23,7 +23,6 @@
  
   "tsserver.enableJavascript": false,
 
-
 //  "languageserver": {
 //    "flow": {
 //      "command": "flow",

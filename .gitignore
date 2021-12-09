@@ -7,3 +7,5 @@
 .config/nvim/session
 .config/vifm/vifminfo
 .config/coc/extensions
+.config/karabiner/assets
+.config/karabiner/automatic_backups
