@@ -26,6 +26,8 @@ fi
 # environmental variables
 #######################################################################
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export EDITOR=nvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
 export HISTSIZE=100000
@@ -118,10 +120,10 @@ fi
 
 ## nodejs
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-nvm use
+#nvm use
 
 ## golang
 export PATH="$HOME/.goenv/bin:$PATH"

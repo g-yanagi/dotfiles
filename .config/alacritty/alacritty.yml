@@ -1,8 +1,8 @@
 # Window Customization
 window:
   dimensions:
-    columns: 300
-    lines: 90
+    columns: 150
+    lines: 70
   padding:
     x: 4 
     y: 4 
@@ -16,13 +16,13 @@ scrolling:
 # Font Customization
 font:
   normal:
-    family: HackGen35Nerd Console
+    family: Migu 1M
     style: Regular
   bold:
-    family: HackGen35Nerd Console
+    family: Migu 1M
     style: Bold
   italic:
-    family: HackGen35Nerd Console
+    family: Migu 1M
     style: Italic
   size: 18
   offset:

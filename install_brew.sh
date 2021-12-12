@@ -13,6 +13,7 @@ brew install entr
 brew install expect
 brew install fish
 brew install fzf
+$(brew --prefix)/opt/fzf/install
 brew install gdbm
 brew install gettext
 brew install gh
@@ -61,4 +62,7 @@ brew install utf8proc
 brew install vifm
 brew install wget
 brew install xz
-brew install -cask wkhtmltopdf
+brew install wkhtmltopdf
+brew install nvm
+brew isntall alacritty
+arch -arm64 brew install kops
