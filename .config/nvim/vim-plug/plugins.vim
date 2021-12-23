@@ -53,7 +53,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'dracula/vim', { 'as': 'dracula' }
 
-  Plug 'codota/tabnine-vim'
+  " Plug 'codota/tabnine-vim'
 
   Plug 'lambdalisue/fern.vim'
 
