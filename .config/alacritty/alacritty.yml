@@ -1,7 +1,7 @@
 # Window Customization
 window:
   dimensions:
-    columns: 150
+    columns: 250
     lines: 70
   padding:
     x: 4 
@@ -24,7 +24,7 @@ font:
   italic:
     family: Migu 1M
     style: Italic
-  size: 18
+  size: 22
   offset:
     x: 0
     y: 0

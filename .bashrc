@@ -26,7 +26,6 @@ fi
 # environmental variables
 #######################################################################
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export EDITOR=nvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules/:/usr/lib/node_modules/
@@ -132,10 +131,11 @@ eval "$(goenv init -)"
 
 ## pyenv
 
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+
+#export PYENV_ROOT="${HOME}/.pyenv"
+#export PATH="${PYENV_ROOT}/bin:$PATH"
+#eval "$(pyenv init --path)"
+#eval "$(pyenv virtualenv-init -)"
 
 if [ -f ~/.bashrc.mac ]; then
   . ~/.bashrc.mac
@@ -146,4 +146,6 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 # eval "$(starship init bash)"
+
+
 

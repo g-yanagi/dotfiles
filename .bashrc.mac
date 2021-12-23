@@ -6,6 +6,7 @@ PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 PATH=$PATH:/sbin/
 PATH=$PATH:/Applications/kitty.app/Contents/MacOS
+PATH=$PATH:/opt/homebrew/bin/
 
 #######################################################################
 # aliases
