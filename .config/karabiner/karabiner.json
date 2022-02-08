@@ -72,6 +72,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^org\\.vim\\."
                                         ],
                                         "type": "frontmost_application_if"
@@ -102,6 +103,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^org\\.vim\\."
                                         ],
                                         "type": "frontmost_application_if"
@@ -256,6 +258,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -318,6 +321,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -381,6 +385,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -484,6 +489,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -548,6 +554,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -612,6 +619,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -676,6 +684,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -740,6 +749,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.vim\\.",
@@ -984,6 +994,43 @@
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 615,
+                        "vendor_id": 76
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "right_arrow"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 833,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 666,
                         "vendor_id": 76
                     },
                     "ignore": false,

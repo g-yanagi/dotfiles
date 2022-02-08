@@ -1,8 +1,8 @@
 # Window Customization
 window:
   dimensions:
-    columns: 250
-    lines: 70
+    columns: 170
+    lines: 60
   padding:
     x: 4 
     y: 4 
@@ -16,15 +16,15 @@ scrolling:
 # Font Customization
 font:
   normal:
-    family: Migu 1M
+    family: Hack
     style: Regular
   bold:
-    family: Migu 1M
+    family: Hack
     style: Bold
   italic:
-    family: Migu 1M
+    family: Hack
     style: Italic
-  size: 22
+  size: 20
   offset:
     x: 0
     y: 0

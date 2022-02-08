@@ -48,3 +48,14 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! http)
+(package! php-mode)
+(package! web-mode)
+(package! typescript-mode)
+(package! company-tabnine)
+(package! go-mode)
+(package! go-autocomplete)
+(package! go-eldoc)
+(package! sql-indent)
+

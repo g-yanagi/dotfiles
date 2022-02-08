@@ -125,9 +125,9 @@ export NVM_DIR="$HOME/.nvm"
 #nvm use
 
 ## golang
-export PATH="$HOME/.goenv/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
+#export PATH="$HOME/.goenv/bin:$PATH"
+#export GOENV_DISABLE_GOPATH=1
+#eval "$(goenv init -)"
 
 ## pyenv
 

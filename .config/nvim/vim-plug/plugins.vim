@@ -65,6 +65,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'christoomey/vim-tmux-navigator'
 
+  Plug 'gorodinskiy/vim-coloresque'
 call plug#end()
 
 " Automatically install missing plugins on startup
