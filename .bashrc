@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init bash pre)"
+
 #######################################################################
 # prompt
 #######################################################################
@@ -34,7 +38,7 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 # export GOPATH=$HOME/go
 
-PATH=$HOME/bin:$HOME/Bin:/usr/local/bin:/usr/bin:/bin:$PATH
+PATH=$HOME/bin:$HOME/Bin:/usr/local/bin:/usr/bin:/bin:$PATH:$HOME/Dropbox/bin
 PATH=/usr/ant/bin:$PATH
 PATH=$NODE_PATH:$PATH
 PATH=/usr/local/share/npm/bin:$PATH
@@ -147,5 +151,6 @@ fi
 
 # eval "$(starship init bash)"
 
-
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init bash post)"
 

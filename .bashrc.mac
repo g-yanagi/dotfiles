@@ -13,3 +13,7 @@ PATH=$PATH:/opt/homebrew/bin/
 #######################################################################
 
 unset DYLD_LIBRARY_PATH
+
+if [[ -d /Applications/iTerm\ 2.app ]]; then
+  alias ssh-profile='~/dotfiles/bin/ssh-change-profile.sh'
+fi
