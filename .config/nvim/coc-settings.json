@@ -1,15 +1,23 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "yaml",  "json", "python"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    //    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "json",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "jsonc",
+    "go"
+  ],
 
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
 
-  "snippets.ultisnips.directories": 
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
 
   // explorer
   "explorer.width": 30,
@@ -20,21 +28,32 @@
     "v": "open:vsplit"
   },
   "coc.preferences.extensionUpdateCheck": "daily",
- 
+
   "tsserver.enableJavascript": false,
+  "javascript.validate.enable": false,
 
-//  "languageserver": {
-//    "flow": {
-//      "command": "flow",
-//      "args": ["lsp"],
-//      "filetypes": ["javascript", "javascriptreact"],
-//      "initializationOptions": {},
-//      "requireRootPattern": true,
-//      "settings": {},
-//      "rootPatterns": [".flowconfig"]
-//    }
-//  },
+  //  "languageserver": {
+  //    "flow": {
+  //      "command": "flow",
+  //      "args": ["lsp"],
+  //      "filetypes": ["javascript", "javascriptreact"],
+  //      "initializationOptions": {},
+  //      "requireRootPattern": true,
+  //      "settings": {},
+  //      "rootPatterns": [".flowconfig"]
+  //    }
+  //  },
 
-  "go.disable.workspaceFolders" : false
+  "go.disable.workspaceFolders": false,
 
+  "tabnine.disable_filetypes": [
+    "typescriptreact",
+    "go",
+    "javascriptreact",
+    "javascript",
+    "typescript",
+    "css",
+    "html",
+    "graphql"
+  ]
 }

@@ -9,3 +9,4 @@
 .config/coc/extensions
 .config/karabiner/assets
 .config/karabiner/automatic_backups
+.config/nvim/spell/

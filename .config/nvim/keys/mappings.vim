@@ -55,3 +55,5 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-k> :tabnext<CR>
 nnoremap <C-l> :tabprevious<CR>
+
+nmap <F1> <nop>

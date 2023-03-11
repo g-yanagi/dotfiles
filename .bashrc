@@ -1,7 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init bash pre)"
-
 #######################################################################
 # prompt
 #######################################################################
@@ -136,11 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 ## pyenv
 
 
-#export PYENV_ROOT="${HOME}/.pyenv"
-#export PATH="${PYENV_ROOT}/bin:$PATH"
-#eval "$(pyenv init --path)"
-#eval "$(pyenv virtualenv-init -)"
-
 if [ -f ~/.bashrc.mac ]; then
   . ~/.bashrc.mac
 fi
@@ -149,8 +140,11 @@ if [ -f ~/.bashrc.local ]; then
   . ~/.bashrc.local
 fi
 
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
 # eval "$(starship init bash)"
 
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init bash post)"
-
+. "$HOME/.cargo/env"

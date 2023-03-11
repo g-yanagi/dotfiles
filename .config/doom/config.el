@@ -1,8 +1,8 @@
 ;;; Add to ~/.doom.d/config.el
-(setq doom-font (font-spec :family "Migu 1M" :size 22)
-      doom-variable-pitch-font (font-spec :family "Migu 1M") ; inherits `doom-font''s :size
-      doom-unicode-font (font-spec :family "Migu 1M" :size 22)
-      doom-big-font (font-spec :family "Migu 1M" :size 22))
+(setq doom-font (font-spec :family "HackGen" :size 18)
+      doom-variable-pitch-font (font-spec :family "HackGen") ; inherits `doom-font''s :size
+      doom-unicode-font (font-spec :family "HackGen" :size 18)
+      doom-big-font (font-spec :family "HackGen" :size 18))
 
 ;(after! web-mode
 ;  (set-company-backend! 'web-mode '(company-robe company-files :with company-yasnippet))
@@ -42,3 +42,12 @@
   "turn on TabNine for this buffer"
   (interactive)
   (setq-local company-backends (add-to-list 'company-backends 'company-tabnine)))
+
+(defun web-mode-indent (num)
+  (interactive "nIndent: ")
+  (setq web-mode-markup-indent-offset num)
+  (setq web-mode-css-indent-offset num)
+  (setq web-mode-code-indent-offset num)
+  )
+
+(setq auto-save-default nil)

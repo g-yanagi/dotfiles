@@ -8,7 +8,8 @@ source $HOME/.config/nvim/general/paths.vim
 " ordinary neovim
 " source $HOME/.config/nvim/themes/syntax.vim
 " source $HOME/.config/nvim/themes/onedark.vim
-source $HOME/.config/nvim/themes/iceberg.vim
+" source $HOME/.config/nvim/themes/iceberg.vim
+source $HOME/.config/nvim/themes/dracula.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
