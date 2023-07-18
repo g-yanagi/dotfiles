@@ -139,4 +139,5 @@ let g:coc_explorer_global_presets = {
 nnoremap <silent> <leader>e :CocCommand explorer<CR>
 " nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
 nnoremap <C-G> :CocCommand explorer --preset floatingRightside<CR>
+nnoremap <C-S> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

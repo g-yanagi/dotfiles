@@ -55,7 +55,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Plug 'codota/tabnine-vim'
 
-  Plug 'lambdalisue/fern.vim'
+  " Plug 'lambdalisue/fern.vim'
 
   Plug 'antoinemadec/FixCursorHold.nvim'
 
@@ -63,9 +63,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'junegunn/vim-easy-align'
 
-  Plug 'christoomey/vim-tmux-navigator'
+"  Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'gorodinskiy/vim-coloresque'
+
+"  Plug 'cohama/lexima.vim'
+
+"  Plug 'liuchengxu/vim-which-key'
+  
+  Plug 'github/copilot.vim'
+
+  Plug 'nvim-treesitter/nvim-treesitter'
+
+  Plug 'nvim-treesitter/nvim-treesitter-context'
+
+"  Plug 'wellle/context.vim'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
