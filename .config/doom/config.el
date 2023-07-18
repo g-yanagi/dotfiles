@@ -1,8 +1,8 @@
 ;;; Add to ~/.doom.d/config.el
-(setq doom-font (font-spec :family "HackGen" :size 18)
-      doom-variable-pitch-font (font-spec :family "HackGen") ; inherits `doom-font''s :size
-      doom-unicode-font (font-spec :family "HackGen" :size 18)
-      doom-big-font (font-spec :family "HackGen" :size 18))
+(setq doom-font (font-spec :family "Migu 1M" :size 20)
+      doom-variable-pitch-font (font-spec :family "Migu 1M") ; inherits `doom-font''s :size
+      doom-unicode-font (font-spec :family "Migu 1M" :size 20)
+      doom-big-font (font-spec :family "Migu 1M" :size 20))
 
 ;(after! web-mode
 ;  (set-company-backend! 'web-mode '(company-robe company-files :with company-yasnippet))

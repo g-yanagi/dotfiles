@@ -11,7 +11,7 @@ set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 " set ruler              			            " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
-" set mouse=a                             " Enable your mouse
+set mouse=r                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
@@ -34,7 +34,7 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
-set clipboard=unnamed               " Copy paste between vim and everything else
+set clipboard+=unnamed,unnamedplus               " Copy paste between vim and everything else
 set incsearch
 set foldmethod=indent
 set foldlevel=99
@@ -54,6 +54,10 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+au FileType proto set shiftwidth=2
+au FileType proto set softtabstop=2
+au FileType proto set tabstop=2
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.js.flow set filetype=javascript.tsx
