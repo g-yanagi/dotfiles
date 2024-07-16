@@ -1,8 +1,8 @@
 ;;; Add to ~/.doom.d/config.el
-(setq doom-font (font-spec :family "Migu 1M" :size 20)
-      doom-variable-pitch-font (font-spec :family "Migu 1M") ; inherits `doom-font''s :size
-      doom-unicode-font (font-spec :family "Migu 1M" :size 20)
-      doom-big-font (font-spec :family "Migu 1M" :size 20))
+(setq doom-font (font-spec :family "UDEV Gothic NF" :size 20)
+      doom-variable-pitch-font (font-spec :family "UDEV Gothic NF") ; inherits `doom-font''s :size
+      doom-unicode-font (font-spec :family "UDEV Gothic NF" :size 20)
+      doom-big-font (font-spec :family "UDEV Gothic NF" :size 20))
 
 ;(after! web-mode
 ;  (set-company-backend! 'web-mode '(company-robe company-files :with company-yasnippet))
@@ -51,3 +51,19 @@
   )
 
 (setq auto-save-default nil)
+
+;; 日付の挿入
+(defun insert-current-date ()
+  "Insert the current date in YYYY-MM-DD format."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(map! :leader
+      :desc "Insert current date"
+      "i d" #'insert-current-date)
+
+
+(setq company-idle-delay 10)
+
+;;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+;;(add-to-list 'default-frame-alist '(alpha . (85 . 50)))

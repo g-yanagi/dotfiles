@@ -1,8 +1,8 @@
 # Window Customization
 window:
   dimensions:
-    columns: 170
-    lines: 60
+    columns: 100
+    lines: 25
   padding:
     x: 4
     y:
@@ -18,15 +18,15 @@ scrolling:
 # Font Customization
 font:
   normal:
-    family: Migu 1M
+    family: UDEV Gothic NF
     style: Regular
   bold:
-    family: Migu 1M
+    family: UDEV Gothic NF
     style: Bold
   italic:
-    family: Migu 1M
+    family: UDEV Gothic NF
     style: Italic
-  size: 20
+  size: 18
   offset:
     x: 0
     y: 0
