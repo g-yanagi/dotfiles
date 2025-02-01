@@ -63,12 +63,12 @@ return {
 	-- font = wezterm.font("HackGen"),
 	-- font = wezterm.font("Fira Code"),
 	font = wezterm.font("UDEV Gothic NF"),
-	font_size = 18,
+	font_size = 24,
 
-	-- color_scheme = "Darcula (base16)",
-	color_scheme = "iceberg-dark",
+	color_scheme = "Darcula (base16)",
+	-- color_scheme = "iceberg-dark",
 
-	--- window_background_opacity = 0.85,
+	-- window_background_opacity = 0.9,
 
 	-- Enable mouse support in the terminal
 	-- enable_mouse_mode = true,
@@ -102,4 +102,36 @@ return {
 
 	use_fancy_tab_bar = false,
 	tab_max_width = 20,
+
+	check_for_updates = false,
+	front_end = "OpenGL", -- OpenGL を使用して描画速度を向上
+	enable_wayland = false,
+	animation_fps = 60, -- アニメーションの FPS を制限
+	max_fps = 60, -- 最大 FPS を制限
+	prefer_egl = true, -- EGL を使用する場合に有効化
+
+	-- use_resize_increments = true, -- リサイズを効率化
+	-- enable_tab_bar = false, -- タブバー非表示
+	freetype_load_target = "Normal", -- フォントのロードを最適化
+	-- idle_timeout = 0, -- 入力時の遅延を無効化
+
+	-- バックグラウンドでの再描画を制限してCPU負荷を軽減
+	inactive_pane_hsb = {
+		saturation = 0.8,
+		brightness = 0.7,
+	},
+
+	-- adjust_window_size_when_changing_font_size = true,
+
+	ssh_domains = {
+		{
+			-- This name identifies the domain
+			name = "builder",
+			-- The hostname or address to connect to. Will be used to match settings
+			-- from your ssh config file
+			remote_address = "builder",
+			-- The username to use on the remote host
+			username = "goro",
+		},
+	},
 }

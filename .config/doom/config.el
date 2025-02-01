@@ -1,8 +1,8 @@
 ;;; Add to ~/.doom.d/config.el
-(setq doom-font (font-spec :family "UDEV Gothic NF" :size 20)
+(setq doom-font (font-spec :family "UDEV Gothic NF" :size 26)
       doom-variable-pitch-font (font-spec :family "UDEV Gothic NF") ; inherits `doom-font''s :size
-      doom-unicode-font (font-spec :family "UDEV Gothic NF" :size 20)
-      doom-big-font (font-spec :family "UDEV Gothic NF" :size 20))
+      doom-unicode-font (font-spec :family "UDEV Gothic NF" :size 26)
+      doom-big-font (font-spec :family "UDEV Gothic NF" :size 26))
 
 ;(after! web-mode
 ;  (set-company-backend! 'web-mode '(company-robe company-files :with company-yasnippet))
